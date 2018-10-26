@@ -223,6 +223,7 @@
                     </div>
                 </li>
             </ul>
+
         </div>
 
         <ul class="nav-list">
@@ -236,15 +237,86 @@
         </ul>
     </div>
 
-   <div class="my-order">
-       <div class="wrap ">
-          <h3>首页>个人中心>我的订单</h3>
+   <div class="my-order ">
+       <div class="wrap">
+          <h3 class="order-index">首页 > 个人中心 > 我的订单</h3>
+           <div class="order-box">
+               <ul class="order-list clearfix">
+                   <li class="redBox">全部</li>
+                   <li>待付款</li>
+                   <li>待发货</li>
+                   <li>待收货</li>
+                   <li>待收货</li>
+               </ul>
+               <div class="order-search clearfix">
+                   <div class="order-inp clearfix fl">
+                       <div class="order-inp-block">
+                           <input type="text"  placeholder="请输入您想要搜索的商品名称货品牌">
+                       </div>
+                       <button class="order-search-btn" type="button"><i class="order-search-icon"></i></button>
+                   </div>
+                   <div class="order-page fr">
+                       <span class="page-gray">上一页</span>
+                       <span>下一页</span>
+                   </div>
+               </div>
+
+               <table class="order-table">
+                   <thead>
+                   <tr class="thead">
+                       <th>商品名称</th>
+                       <th>数量</th>
+                       <th>单价</th>
+                       <th>买家</th>
+                       <th>实付金额</th>
+                       <th>订单状态</th>
+                       <th>操作</th>
+                   </tr>
+                   </thead>
+                   <tbody class="tbody">
+                   <tr>
+                       <td colspan="8" class="clearfix order-txt">
+                           <p>订单编号：201589398778</p>
+                           <p>下单时间：2018-10-10 18：25：36</p>
+                           <p>深圳是信营国际电子商务有限公司</p>
+                           <a href="javascript:;">联系客服</a>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td><img src="../../images/milk.jpg" alt=""></td>
+                       <td>
+                           <p>韩国bikit guard儿童防蚊纽扣 婴儿防蚊扣橙色韩国bikit guard儿...</p>
+                           <p>2罐装  保税区：不限</p>
+                       </td>
+                       <td>x5</td>
+                       <td>￥180.00</td>
+                        <td>
+
+                        </td>
+                       <td>
+                           <p>￥280.00</p>
+                           <p>(含运费：￥0.00)</p>
+                       </td>
+                       <td>
+                           <p>待支付</p>
+                           <p>订单详情</p>
+                       </td>
+                       <td>
+                           <a href="javascript:;">取消订单</a>
+                           <a href="javascript:;">去支付</a>
+                       </td>
+                   </tr>
+                   </tbody>
+               </table>
+           </div>
+
        </div>
    </div>
 
 </body>
 <script type="text/javascript">
     $(document).ready(function() {
+        // 二级导航
        $(".nav-box").hover(function(){
         $(".two-nav").stop().slideDown(200);
         },
