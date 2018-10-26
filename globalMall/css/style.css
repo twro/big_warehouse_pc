@@ -239,6 +239,7 @@ a {
   color: #222222;
 }
 .two-nav {
+  position: absolute;
   width: 245px;
   background-color: #f5174a;
 }
@@ -251,9 +252,6 @@ a {
 .two-nav h3:hover {
   background: #fff;
   color: #f5174a;
-}
-.two-nav {
-  position: relative;
 }
 .two-nav-active {
   z-index: 2;
@@ -395,5 +393,8 @@ a {
   font-size: 12px;
   text-align: center;
   color: #666666;
+}
+.my-order {
+  background-color: #f4f4f4;
 }
 /*# sourceMappingURL=style.css.map */
