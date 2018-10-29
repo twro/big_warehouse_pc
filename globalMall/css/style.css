@@ -244,15 +244,19 @@ a {
   width: 245px;
   background-color: #f5174a;
 }
+.two-nav li:hover {
+  background: #fff;
+  color: #f5174a;
+}
+.two-nav li:hover h3 {
+  background: #fff;
+  color: #f5174a;
+}
 .two-nav h3 {
   font-weight: normal;
   font-size: 14px;
   color: #ffffff;
   padding: 13px 0 13px 45px;
-}
-.two-nav h3:hover {
-  background: #fff;
-  color: #f5174a;
 }
 .two-nav-active {
   z-index: 2;
