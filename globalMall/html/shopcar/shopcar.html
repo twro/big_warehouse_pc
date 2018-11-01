@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>进货车</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/shopcar.css?v=2121">
+</head>
+
+<body>
+    <div class="shopcar-main" id="shopcar">
+        <div class="car-inner">
+            <div class="car-nav">
+                <ul>
+                    <li>国内仓库发货(8)</li>
+                    <li>保税区直邮(2)</li>
+                    <li>海外直邮(20)</li>
+                </ul>
+            </div>
+
+            <div class="car-box">
+                <div class="car-table">
+                    <ul>
+                        <li class="top">
+                            <div class="left">
+                                <div class="radioBtn">
+                                    <input id="item" type="checkbox"><label for="item" class="radio_label"></label><span>全部</span>
+                                </div>
+                                <div class="goods-pic">商品信息</div>
+                            </div>
+                            <div class="right">
+                                <div class="list_1">规格</div>
+                                <div class="list_2">折合单价</div>
+                                <div class="list_3">数量</div>
+                                <div class="list_4">金额</div>
+                                <div class="list_5">操作</div>
+                            </div>
+                        </li>
+
+                        <li class="list" v-for="(item, index) in 3" :key="index">
+                            <div class="left_box">
+                                <div class="left">
+                                    <div class="radioBtn">
+                                        <input id="item1" type="checkbox"><label for="item1" class="radio_label"></label>
+                                    </div>
+                                    <div class="goods-pic">
+                                        <div class="imgShow">
+                                            <img src="../../images/goods_03.png" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <p class="title">新西兰爱他美婴幼儿奶粉1段900g(凹凸程度:重) 2018年8月到期......</p>
+                                            <p>效期：2018-06-18</p>
+                                            <p>运费：包邮</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="list_1">3罐装</div>
+                                    <div class="list_2">￥180.00</div>
+                                    <div class="list_3">
+                                        <div class="car_add">
+                                            <sapn class="minus">-</sapn>
+                                            <input type="number" class="nums" value="2">
+                                            <span class="add">+</span>
+                                        </div>
+                                    </div>
+                                    <div class="list_4">
+                                        <span class="red-price">￥800.00</span>
+                                    </div>
+                                    <div class="list_5">
+                                        <a href="javascript:;">删除</a>
+                                        <a href="javascript:;">移入清单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="send_address">
+                                <div class="address_inner">
+                                    <p><span class="texta">配送置：</span><input type="text" name="" id="" placeholder="请选择收货人地址"><em>请选择</em></p>
+                                    <p><span class="texta">收货人：</span><input type="text" name="" id="" placeholder="请选择收货人信息"><em>请选择</em></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="show-more">展开其余三件商品 <span></span></li>
+                    </ul>
+                </div>
+                <div class="car-lost">
+                    <div class="lost-inner">
+                        <div class="titie"><span class="left">失效商品(2)件</span><span class="right">清空失效商品</span></div>
+                        <div class="lost-table">
+                            <ul>
+                                <li class="top">
+                                    <div class="lost-left">
+                                        <div class="msg">商品信息</div>
+                                    </div>
+                                    <div class="lost-right">
+                                        <div class="lost_list_1">规格</div>
+                                        <div class="lost_list_2">状态</div>
+                                        <div class="lost_list_3">效期</div>
+                                        <div class="lost_list_4">原因</div>
+                                    </div>
+                                </li>
+                                <li class="lost_list" v-for="(item, index) in 2" :key="index">
+                                    <div class="lost-left">
+                                        <div class="msg">
+                                            <div class="lostImg">
+                                                <img src="../../images/goods_03.png" alt="">
+                                            </div>
+                                            <div class="lostTtex">新西兰爱他美婴幼儿奶粉1段900g(凹凸程度:重)2018年8月到期......</div>
+                                        </div>
+                                    </div>
+                                    <div class="lost-right">
+                                        <div class="lost_list_1">3罐装</div>
+                                        <div class="lost_list_2">失效</div>
+                                        <div class="lost_list_3">2018-08-09至2019-09-20</div>
+                                        <div class="lost_list_4">当前商品活动已结束，请重新选</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-account">
+                <div class="account-inner">
+                    <span class="price">合计：<em>￥296.00</em></span>
+                    <span class="account-btn">去结算</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#shopcar",
+
+    })
+</script>
+
+</html>
