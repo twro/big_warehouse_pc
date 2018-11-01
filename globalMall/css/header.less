@@ -167,7 +167,17 @@
 .head-nav{
   margin-top:42px;
   height: 36px;
+  &.head-nav-fixed{
+    margin-top:0;
+    background-color: #fff;
+    position: fixed;
+    left:50%;
+    top:0;
+    margin-left:-592px;
+    z-index: 333333;
+  }
 }
+
 .nav-box{
   float: left;
 }
@@ -290,6 +300,8 @@
 .two-nav-right{
     img{
       margin-bottom:10px;
+      width:264px;
+      height:126px;
     }
 }
 
@@ -301,3 +313,4 @@
 .two-nav li.on .two-nav-active{
   display: block;
 }
+

@@ -240,10 +240,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
        $(".nav-box").hover(function(){
-        $(".two-nav").slideDown(200);
+        $(".two-nav").stop().slideDown(200);
         },
         function(){
-            $(".two-nav").slideUp(200);
+            $(".two-nav").stop().slideUp(200);
         });
 
         $(".two-nav>li").hover(function(){
