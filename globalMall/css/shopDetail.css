@@ -10,7 +10,7 @@ ul {
   list-style: none;
 }
 
-#super_citys > div {
+#super_citys>div {
   border: 1px solid #ccc;
   height: 33px;
   width: 150px;
@@ -29,7 +29,7 @@ ul {
   user-select: none;
 }
 
-#super_citys > div > div {
+#super_citys>div>div {
   overflow: hidden;
   padding-right: 24px;
   font-size: 13px;
@@ -39,7 +39,7 @@ ul {
   border: 1.5px solid #f5174a !important;
 }
 
-#super_citys > div > ul {
+#super_citys>div>ul {
   width: 100%;
   border: 2px solid #f5174a !important;
   position: absolute;
@@ -52,14 +52,14 @@ ul {
   background: #fff;
 }
 
-#super_citys > div > ul > li {
+#super_citys>div>ul>li {
   font-size: 15px;
   text-indent: 10px;
   cursor: pointer;
   overflow: hidden;
 }
 
-#super_citys > div > ul > li:hover {
+#super_citys>div>ul>li:hover {
   background: #f5174a;
   color: #fff;
 }
@@ -384,9 +384,10 @@ img {
   float: left;
   margin: 0 10px 10px 0;
 }
-.grading-list li.select{
+
+.grading-list li.select {
   background: url(../images/select_03.png) no-repeat left center;
-  border:none;
+  border: none;
 }
 
 
@@ -584,6 +585,7 @@ img {
   overflow: hidden;
   padding-bottom: 50px;
 }
+
 .msg-inner h3 {
   width: 100%;
   height: 55px;
@@ -593,11 +595,20 @@ img {
   text-indent: 15px;
   background: #f8f8f8;
 }
-table,
-table tr th,
+
+table tr th.no {
+  border-top: 1px solid #d6d6d6;
+}
+table tr th.last {
+  border-bottom: 1px solid #d6d6d6
+}
+
 table tr td {
   border: 1px solid #d6d6d6;
+  border-bottom: none;
+  border-right: none;
 }
+
 .msg-inner tr {
   width: 100%;
   line-height: 42px;
@@ -607,6 +618,7 @@ table tr td {
   width: 100%;
   overflow: hidden;
 }
+
 .pic_show h3 {
   width: 100%;
   height: 55px;
@@ -627,6 +639,7 @@ table tr td {
   width: 100%;
   overflow: hidden;
 }
+
 .detail_tips h3 {
   width: 100%;
   height: 55px;
@@ -695,13 +708,15 @@ table tr td {
   -moz-osx-font-smoothing: grayscale;
   margin-left: 10px;
 }
-.tips_list i.arr_up{
+
+.tips_list i.arr_up {
   background: url(../images/arr_up.png) no-repeat left center;
 }
-.tips_list i.arr_down{
+
+.tips_list i.arr_down {
   background: url(../images/arr_down.png) no-repeat left center;
 }
 
-.tips_list .color-red{
+.tips_list .color-red {
   color: #f5174a;
 }
