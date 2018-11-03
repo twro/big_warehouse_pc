@@ -1,4 +1,3 @@
-
 .promotion-mian {
   width: 100%;
   background: rgb(248, 248, 248);
@@ -170,6 +169,13 @@ img {
   overflow: hidden;
 }
 
+.list_inner .right_now a {
+  display: block;
+  width: 210px;
+  height: 36px;
+  color: #fff;
+}
+
 .list_inner .country {
   width: 30px;
   height: 30px;
@@ -227,11 +233,13 @@ img {
 .page_inner a {
   color: #333;
 }
+
 .page_inner dd.color_ {
   background: #f5174a;
   color: #fff;
   border: none;
 }
+
 .page_inner dd.color_ a {
   color: #fff;
 }
