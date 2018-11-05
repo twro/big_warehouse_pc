@@ -24,7 +24,7 @@
                     <li v-for="(item, i) in dataList" :key="i">
                         <span class="type">{{item.title}}</span>
                         <a href="javascript:;" v-for="(item1, j) in item.list" :key="j" @click.stop="showFn(item1,i,j)"
-                            :class="item.index == j?'active':''">{{item1}}<em @click.stop="delFn(j)">x</em></a>
+                            :class="item.index == j?'active':''">{{item1}}<em @click.stop="delFn(i)">x</em></a>
                         <span class="more" v-if="i == 2">更多</span>
                     </li>
                 </ul>
@@ -86,23 +86,25 @@
         el: "#goodsList",
         data: {
             choose: {
-                0: "尿不湿",
-                1: "尿不湿",
-                2: "尿不湿",
+                0: "尿不湿1",
+                1: "尿不湿1",
+                2: "尿不湿1",
             },
             dataList: [{
                     title: '类目',
-                    list: ["尿不湿", "尿不湿", "尿不湿", "尿不湿", "华为", "三星", "OPPO", "vivo", "乐视", "尿不湿", "中兴", "索尼"],
+                    list: ["尿不湿1", "尿不湿2", "尿不湿3", "尿不湿4", "华为", "三星", "OPPO", "vivo", "乐视", "尿不湿6", "中兴",
+                        "索尼"
+                    ],
                     index: 0
                 },
                 {
                     title: '分类',
-                    list: ["尿不湿", "尿不湿", "尿不湿", "尿不湿", "尿不湿", "尿不湿"],
+                    list: ["尿不湿1", "尿不湿2", "尿不湿3", "尿不湿4", "尿不湿5", "尿不湿6"],
                     index: 0
                 },
                 {
                     title: '品牌',
-                    list: ["尿不湿", "尿不湿", "尿不湿", "尿不湿", "尿不湿"],
+                    list: ["尿不湿1", "尿不湿2", "尿不湿3", "尿不湿4", "尿不湿5"],
                     index: 0
                 }
             ]
@@ -213,10 +215,10 @@
             showFn(val, i, j) {
                 this.$set(this.choose, i, val)
                 this.dataList[i].index = j;
-                console.log(this.choose)
             },
             delFn(key) {
-                this.$delete(this.choose, key);
+                // this.$delete(this.choose, key);vue 2.0以上已被删除,但是在vue 2.0可以正常使用
+                delete this.choose[key];
                 this.dataList[key].index = -1;
             }
         }
