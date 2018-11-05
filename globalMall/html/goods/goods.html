@@ -92,7 +92,9 @@
             },
             dataList: [{
                     title: '类目',
-                    list: ["尿不湿1", "尿不湿2", "尿不湿3", "尿不湿4", "华为", "三星", "OPPO", "vivo", "乐视", "尿不湿6", "中兴", "索尼"],
+                    list: ["尿不湿1", "尿不湿2", "尿不湿3", "尿不湿4", "华为", "三星", "OPPO", "vivo", "乐视", "尿不湿6", "中兴",
+                        "索尼"
+                    ],
                     index: 0
                 },
                 {
@@ -215,6 +217,7 @@
                 this.dataList[i].index = j;
             },
             delFn(key) {
+                // this.$delete(this.choose, key);vue 2.0以上已被删除,但是在vue 2.0可以正常使用
                 delete this.choose[key];
                 this.dataList[key].index = -1;
             }

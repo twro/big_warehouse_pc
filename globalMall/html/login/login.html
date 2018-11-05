@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -9,62 +10,63 @@
     <script src="../../js/jquery-2.1.1.js"></script>
     <script src="../../js/swiper.min.js"></script>
 </head>
+
 <body>
-     <div class="login_head">
-          <div class="wrap clearfix">
-             <span class="login_logo fl"></span>
-              <ul class="login_nav fr">
-                  <li><a href="javascript:;" class="login_active">首页</a></li>
-                  <li class="login_twoNav">
-                      <a href="javascript:;" class="zs-active">招商加盟 <i class="login-sel"></i></a>
-                      <dl class="twoNav-dd">
-                          <dd><a href="">门店加盟</a></dd>
-                          <dd><a href="">商家入驻</a></dd>
-                      </dl>
-                  </li>
-                  <li><a href="javascript:;">关于我们</a></li>
-                  <li><a href="javascript:;">供应商登录</a></li>
-              </ul>
-          </div>
-     </div>
-     <div class="login_banner">
-         <div class="wrap clearfix">
+    <div class="login_head">
+        <div class="wrap clearfix">
+            <span class="login_logo fl"></span>
+            <ul class="login_nav fr">
+                <li><a href="javascript:;" class="login_active">首页</a></li>
+                <li class="login_twoNav">
+                    <a href="javascript:;" class="zs-active">招商加盟 <i class="login-sel"></i></a>
+                    <dl class="twoNav-dd">
+                        <dd><a href="">门店加盟</a></dd>
+                        <dd><a href="">商家入驻</a></dd>
+                    </dl>
+                </li>
+                <li><a href="javascript:;">关于我们</a></li>
+                <li><a href="javascript:;">供应商登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login_banner">
+        <div class="wrap clearfix">
             <div class="login_box fr">
                 <h2>账号登录</h2>
                 <form action="">
-                        <div class="tel1">
-                            <input type="text"  class='inp'  placeholder="手机号码" >
+                    <div class="tel1">
+                        <input type="text" class='inp' placeholder="手机号码" maxlength="11">
+                    </div>
+                    <div class="tel1">
+                        <input type="text" class='inp' placeholder="登录密码" minlength="6" maxlength="18">
+                    </div>
+                    <div class="clearfix login_yzm">
+                        <div class="tel1 yzm_inp fl">
+                            <input type="text" class='inp' placeholder="请输入验证码" maxlength="6">
                         </div>
-                        <div class="tel1">
-                            <input type="text"  class='inp'  placeholder="登录密码" >
-                        </div>
-                       <div class="clearfix login_yzm">
-                           <div class="tel1 yzm_inp fl">
-                               <input type="text"  class='inp'  placeholder="请输入验证码" >
-                           </div>
-                            <span class="yzm-img fr"></span>
-                       </div>
-                       <button id="btn" type ='button'>登录</button>
+                        <span class="yzm-img fr"></span>
+                    </div>
+                    <button id="btn" type='button'>登录</button>
                 </form>
                 <div class="other-type clearfix">
                     <a href="javascript:;" class="fl zc-txt">免费注册</a>
-                    <a href="javascript:;" class="fr pwd-txt">忘记密码？</a>
+                    <a href="javascript:;" class="fr pwd-txt">忘记密码?</a>
                 </div>
                 <span class="type-line"></span>
                 <a href="javascript:;" class="wechat-icon"><img src="../../images/wechat_login.png" alt=""></a>
             </div>
-         </div>
-     </div>
+        </div>
+    </div>
 </body>
+
 </html>
 <script>
-
-  $(".login_twoNav").mouseenter(function () {
-      $(".zs-active").css("color","#f5174a");
-      $(".twoNav-dd").show();
-  })
-  $(".login_twoNav").mouseleave(function () {
-      $(".zs-active").css("color","#000");
-      $(".twoNav-dd").hide();
-  })
+    $(".login_twoNav").mouseenter(function () {
+        $(".zs-active").css("color", "#f5174a");
+        $(".twoNav-dd").show();
+    })
+    $(".login_twoNav").mouseleave(function () {
+        $(".zs-active").css("color", "#000");
+        $(".twoNav-dd").hide();
+    })
 </script>
