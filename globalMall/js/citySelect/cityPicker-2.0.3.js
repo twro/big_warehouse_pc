@@ -417,7 +417,7 @@
             var self = this,
                 arrayVal = val.split(/\,\s|\,/g),
                 result = [],
-                wrapResult=[],
+                wrapResult = [],
                 resultArray;
 
             // 处理传入的城市数组，然后去查找相同的名称，存储到新的数组上
@@ -429,15 +429,15 @@
                         if (wrapResult.indexOf(val) == -1) {
                             wrapResult.push(val);
                         }
-                    }
+                    }      
                 });
             });
-            $.each(wrapResult,function (index,items) { 
-                if( (wrapResult[0].id).substring(0,2) ==(items.id).substring(0,2)){
+            $.each(wrapResult, function (index, items) {
+                if ((wrapResult[0].id).substring(0, 2) == (items.id).substring(0, 2)) {
                     result.push(items)
                 }
-             })
-             
+            })
+
             // 反向排序数组
             resultArray = result[0].parentId === '100000' ? result.sort() : result.reverse();
             // 设置默认值
@@ -523,5 +523,4 @@
     $.fn.cityPicker = function (options) {
         return new Citypicker(options, this);
     };
-
 })(jQuery, window);
