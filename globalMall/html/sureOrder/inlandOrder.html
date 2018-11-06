@@ -149,7 +149,7 @@
                 // this.citySelect(id, '110000, 110100, 110101')
 
             },
-            citySelect: function (id, s, sh, q) {
+            citySelect: function (id, area) {
                 var selector1 = $('#' + id).cityPicker({
                     dataJson: cityData,
                     renderMode: true,
@@ -159,9 +159,10 @@
                     level: 3,
                     onChoiceEnd: function () {
                         console.log(this.values)
+                        // 选择完的地址提交 ajax可以在这里执行
                     }
                 });
-                selector1.setCityVal(s, sh, q)
+                selector1.setCityVal(area)
             },
             addAddress: function () {
                 $('.add_inner').hide();
