@@ -6,7 +6,7 @@
 
 .mycenter-main .mycenter-inner {
     width: 1180px;
-    height: 830px;
+    height: 993px;
     margin: 40px auto 60px;
     box-sizing: border-box;
     overflow: hidden;
@@ -15,7 +15,7 @@
 
 .mycenter-inner .mycenter-left {
     width: 197px;
-    height: 830px;
+    height: 993px;
     border-right: 1px solid #d6d6d6;
     float: left;
 }
