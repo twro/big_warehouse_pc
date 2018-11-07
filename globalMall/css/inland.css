@@ -28,7 +28,7 @@ img {
 
 .address_show ul {
     margin-left: -10px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .address_show li {
@@ -38,11 +38,15 @@ img {
     border: 1px solid #d6d6d6;
     float: left;
     margin-left: 10px;
+    margin-bottom: 10px;
     position: relative;
 }
 
+.address_show li.on {
+    border: none;
+}
 
-.address_show li .list_inner.on{
+.address_show li .list_inner.on {
     background: url(../images/add_select_in.png) no-repeat left center;
     border: none;
 }
@@ -80,10 +84,11 @@ img {
     margin-top: -8px;
 }
 
-.address_show .edit{
+.address_show .edit {
     background: url(../images/edit.png) no-repeat left center;
     right: 20px;
 }
+
 .address_show .phone {
     margin-top: 12px;
 }
@@ -106,14 +111,19 @@ img {
     bottom: 0;
 }
 
+.address_show li.on .fix_address {}
 
 .address_show .fix_address {
     width: 100%;
-    height: 326px;
+    /* height: 326px; */
     overflow: hidden;
     z-index: 21;
     background: #fff;
     transition: all 1s;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    border: 1px solid #d6d6d6;
 }
 
 .address_show .add_address .add_inner {
@@ -382,7 +392,7 @@ img {
     font-size: 14px;
 }
 
-.sure_submit em{
+.sure_submit em {
     font-size: 24px;
     color: #f5174a;
 }
