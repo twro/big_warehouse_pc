@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>个人中心</title>
+</head>
+
+<body>
+     <div class="edit-pwd" id="app">
+          <div class="step-box clearfix">
+              <div class="step-item fl" style="margin-right:212px;">
+                  <span class="edit-step1 end-bg">1</span>
+                  <p>验证身份</p>
+              </div>
+              <div class="edit-bar one-bar"></div>
+              <div class="step-item fl " style="margin-right:212px;">
+                  <span class="edit-step1 add_color1">2</span>
+                  <p>重置密码</p>
+              </div>
+              <div class="edit-bar two-bar"></div>
+              <div class="step-item fl">
+                  <span class="edit-step1 add_color2">3</span>
+                  <p>完成</p>
+              </div>
+          </div>
+         <div class="yz-phone" style="display:block ">
+             <p class="phone-num">验证手机：13689630268</p>
+                <div class="pwd-yzm clearfix">
+                    <label class="fl">验证码：</label>
+                    <div class="pwd-box fl">
+                        <input type="text" class="pwd-inp" placeholder="短信验证码">
+                    </div>
+                    <div class="get-yzm fl" id="getCodeBtn"><span></span>获取验证码</div>
+                </div>
+             <div class="next-btn" id="next-btn">下一步</div>
+         </div>
+
+        <div class="set_pwd" style="display: none">
+            <div class="pwd-yzm clearfix">
+                <label class="fl" style="margin-right:15px;">新密码：</label>
+                <div class="pwd-box set_pwd_inp fl">
+                    <input type="text" class="pwd-inp" placeholder="请输入6-20位字符或数字组合的密码">
+                </div>
+            </div>
+            <div class="pwd-yzm clearfix">
+                <label class="fl">确认密码：</label>
+                <div class="pwd-box set_pwd_inp fl">
+                    <input type="text" class="pwd-inp" placeholder="请再次输入6-20位字符或数字组合的密码">
+                </div>
+            </div>
+            <div class="next-btn" id="next-btn1">确定</div>
+        </div>
+
+         <div class="set_success" style="display: none">
+             <p>恭喜您！密码重置成功，赶紧重新登录吧~</p>
+             <p class="info-finish"><span class="num-red" id="getTime">30</span>秒后自动跳转到登录界面</p>
+             <div class="next-btn">立即登录</div>
+         </div>
+     </div>
+</body>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/vue.min.js"></script>
+<script>
+
+    $(function() {
+        //获取验证码
+        var isBegin = false ;
+        var interval;
+        var count;
+        //总倒计时
+        var totalTime = 60;
+        $("#getCodeBtn").on("click", function() {
+            $(this).addClass('codeActive');
+            if(isBegin) {
+                return;
+            }
+            //倒计时
+            count = 0;
+            $("#getCodeBtn").html( "<span>"+(totalTime - count)+"s</span>重新获取");
+            interval = setInterval(function() {
+                count++;
+                $("#getCodeBtn").html("<span>"+(totalTime - count)+"s</span>重新获取");
+                if(count >= totalTime) {
+                    clearInterval(interval);
+                    isBegin = false;
+                    $("#getCodeBtn").text("获取验证码");
+                    $("#getCodeBtn").removeClass('codeActive');
+                }
+            }, 1000);
+            isBegin = true;
+
+            //发送验证码请求
+            //.....
+        });
+
+
+        //加载时间
+        function getTime() {
+            var isBegin = false ;
+            var interval;
+            var count;
+            //总倒计时
+            var totalTime = 30;
+            if(isBegin) {
+                return;
+            }
+            //倒计时
+            count = 0;
+            $("#getTime").text((totalTime - count));
+            interval = setInterval(function() {
+                count++;
+                if(totalTime-count<10){
+                    $("#getTime").text('0'+(totalTime - count));
+                }else{
+                    $("#getTime").text((totalTime - count));
+                }
+
+                if(count >= totalTime) {
+                    clearInterval(interval);
+                    isBegin = false;
+                    $(".info-finish").text("正在跳转...");
+                }
+            }, 1000);
+            isBegin = true;
+        }
+        getTime();
+
+
+        $("#next-btn").click(function () {
+            var getCode = $(".pwd-inp").val();
+            if(getCode ===''){
+                alert('验证码不能为空');
+                return false;
+            } else if(/^\d{4}$/.test(getCode)){
+            }else{
+                alert('验证码不符合要求');
+                return false;
+            }
+            $(this).parent().hide();
+            $(".set_pwd").show();
+            $(".add_color1").addClass("end-bg");
+            $(".one-bar").addClass("bar-active");
+        })
+
+        $("#next-btn1").click(function () {
+            $(this).parent().hide();
+            $(".set_success").show();
+            $(".add_color1").addClass("end-bg");
+            $(".add_color2").addClass("end-bg");
+            $(".one-bar").addClass("bar-active");
+            $(".two-bar").addClass("bar-active");
+        })
+
+
+
+    });
+
+
+
+</script>
+
+</html>
