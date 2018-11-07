@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/swiper.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/vue.min.js"></script>
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../js/swiper.min.js"></script>
+</head>
+
+<body>
+    <div class="login_head">
+        <div class="wrap clearfix">
+            <span class="login_logo fl"></span>
+            <ul class="login_nav fr">
+                <li><a href="javascript:;">首页</a></li>
+                <li class="login_twoNav">
+                    <a href="javascript:;" class="zs-active login_active">商家入驻 <i class="login-sel"></i></a>
+                    <dl class="twoNav-dd">
+                        <dd><a href="">门店加盟</a></dd>
+                        <dd><a href="">商家入驻</a></dd>
+                    </dl>
+                </li>
+                <li><a href="javascript:;">关于我们</a></li>
+                <li><a href="javascript:;">供应商登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login_banner register-banner">
+
+    </div>
+
+
+     <div class="wrap">
+         <div class="register-box">
+           <div class="clearfix regist-title">
+               <h1 class="fl">供应商注册</h1>
+               <p class="fr"><span>已有账号？</span><a href="javascript:;">立即登录</a></p>
+           </div>
+
+             <div class="form-box">
+                 <form action="">
+                     <div class="inp-item clearfix">
+                         <label class="fl">手机号码：</label>
+                         <div class="inp-box fl">
+                             <input type="text"  class='inp1'  placeholder="请输入手机号码" >
+                         </div>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="inp-item clearfix">
+                         <label class="fl" style="margin-left:15px;">验证码：</label>
+                         <div class="inp-box fl yzm-inp">
+                             <input type="text"  class='inp1'  placeholder="请输入手机验证码" >
+                         </div>
+                         <div class="yzm-btn fl">点击获取</div>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="inp-item clearfix">
+                         <label class="fl"  style="margin-left:30px;">姓名：</label>
+                         <div class="inp-box fl">
+                             <input type="text"  class='inp1'  placeholder="请输入联系人" >
+                         </div>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="inp-item clearfix">
+                         <label class="fl">设置密码：</label>
+                         <div class="inp-box fl">
+                             <input type="password"  class='inp1' >
+                         </div>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="inp-item clearfix">
+                         <label class="fl">设置密码：</label>
+                         <div class="inp-box fl">
+                             <input type="password"  class='inp1' >
+                         </div>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="inp-item clearfix">
+                         <label class="fl"  style="margin-left:15px;">验证码：</label>
+                         <div class="inp-box fl" style="width:240px">
+                             <input type="text"  class='inp1' >
+                         </div>
+                         <span class="yzm-icon fl"></span>
+                         <span class="mark-red fl">*</span>
+                     </div>
+                     <div class="regist-article">
+                         <input type="checkbox" class="fl">
+                         <p class="fl article-txt">我已阅读并同意<a href="javascript:;">《货栈平台协议》</a></p>
+                     </div>
+                     <button id="login-btn" type ='button'>立即注册</button>
+                 </form>
+             </div>
+         </div>
+     </div>
+
+
+    <div class="login_footer">
+        <p>ICP备案网站信息：粤ICP备18122912号-1 Copyright 2015 深圳海中供应链有限公司 Inc.,</p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    $(".login_twoNav").mouseenter(function () {
+        $(".zs-active").css("color", "#f5174a");
+        $(".twoNav-dd").show();
+    })
+    $(".login_twoNav").mouseleave(function () {
+        $(".zs-active").css("color", "#000");
+        $(".twoNav-dd").hide();
+    })
+</script>
