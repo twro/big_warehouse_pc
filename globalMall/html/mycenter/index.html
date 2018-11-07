@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,150 @@
     <link rel="stylesheet" href="../../css/mycenter.css">
     <title>个人中心</title>
 </head>
+
 <body>
     <div class="mycenter-main">
         <div class="mycenter-inner">
-            da
+            <div class="mycenter-left">
+                <ul>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>个人中心</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a href="./KeepBuy.html" target="mainiframe"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a href="./idCardList.html" target="mainiframe"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>账户管理</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>常用工具</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>客服中心</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>消息管理</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>下单交易</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="left-li">
+                        <a href="javascript:;"><i></i><span>营销产品</span></a>
+                        <ul class="sub-memu" style="display:none;">
+                            <li>
+                                <a _href="javascript:;"><span>我的个人中心</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的订单</span></a>
+                            </li>
+                            <li>
+                                <a _href="javascript:;"><span>我的收货地址</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="mycenter-right">
+                <div class="mycener_right_inner">
+                    <iframe name="mainiframe" src="./KeepBuy.html" id="mainiframe" scrolling="auto" onload="resizeFrameHeight()"
+                        frameborder="0" width="102%"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/vue.min.js"></script>
+<script>
+    $('.mycenter-left li').click(function (event) {
+        if ($(this).children('.sub-memu').length) {
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open');
+                $(this).children('.sub-memu').stop().slideUp();
+                $(this).siblings().children('.sub-memu').slideUp();
+            } else {
+                $(this).addClass('open');
+                $(this).children('.sub-memu').stop().slideDown();
+                $(this).siblings().children('.sub-memu').stop().slideUp();
+                $(this).siblings().removeClass('open');
+            }
+        }
+        // else {
+        //     var url = $(this).children('a').attr('_href');
+        //     console.log(url);
+        //     $(".mycener_right_inner").load(url);
+        // }
+        event.stopPropagation();
+
+    });
+
+    function resizeFrameHeight() {
+        var ifm = document.getElementById("mainiframe");
+        ifm.height = document.documentElement.clientHeight - 60;
+    }
+</script>
+
 </html>
