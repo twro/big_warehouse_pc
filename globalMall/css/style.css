@@ -2849,4 +2849,131 @@ tbody td {
 .num-black {
   color: #000;
 }
+.person-info {
+  margin: 40px 30px 0 30px;
+}
+.person-head {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d6d6d6;
+}
+.person-head .head-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.person-head .lr-btn {
+  font-size: 20px;
+  color: #333333;
+  margin: 40px 0 0 15px;
+}
+.person-head .edit-head {
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  border: solid 1px #f5174a;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #f5174a;
+  text-align: center;
+  line-height: 40px;
+  margin: 30px 0 0 30px;
+}
+.person-head .person-login-title {
+  font-size: 20px;
+  margin: 40px 0 0 8px;
+  color: #333333;
+}
+.person-box {
+  margin-top: 40px;
+}
+.person-item {
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 1px;
+  color: #222222;
+}
+.person-item p {
+  margin: 10px 10px 0 0;
+}
+.person-item .item-block {
+  width: 320px;
+  height: 34px;
+  border-radius: 3px;
+  border: solid 1px #dddddd;
+  text-align: left;
+  line-height: 34px;
+  padding-left: 12px;
+}
+.person-login-list {
+  margin-top: 40px;
+}
+.person-login-list li {
+  margin: 0 50px;
+  display: inline-block;
+}
+.person-login-list li a {
+  width: 100px;
+  display: block;
+}
+.person-login-list li a img {
+  margin: 0 auto 12px;
+}
+.person-login-list li p {
+  text-align: center;
+}
+.about-hz {
+  margin: 40px 30px  0 30px;
+}
+.hot-line {
+  font-size: 14px;
+  color: #666666;
+}
+.adress-list {
+  margin-bottom: 50px;
+}
+.adress-list li {
+  font-size: 12px;
+  color: #3d3d3d;
+  padding-bottom: 16px;
+}
+.class_box {
+  margin: 40px 20px 0 20px;
+  font-size: 14px;
+  color: #222222;
+}
+.class_title .class_icon {
+  display: block;
+  background-image: url(../images/ask.png);
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+  margin: 0 10px 0 0;
+}
+.class_title .class_icon1 {
+  background-image: url(../images/sheng.png);
+}
+.class_title .class_icon2 {
+  background-image: url(../images/fu.png);
+}
+.class_item {
+  margin-bottom: 40px;
+}
+.class_list {
+  margin: 34px 0  0 25px;
+}
+.class_list li {
+  padding-bottom: 10px;
+}
+.class_img {
+  width: 872px;
+  height: 271px;
+  margin: 34px 0 0 26px;
+}
+.class_txt {
+  color: #666666;
+  margin: 20px 0 0 25px;
+}
 /*# sourceMappingURL=style.css.map */
