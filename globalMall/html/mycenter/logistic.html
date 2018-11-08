@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="logistic-mian">
+    <div class="logistic-mian" id="logistic">
         <div class="loginstic-inner">
             <div class="logistic-nav">
                 <ul>
@@ -30,7 +30,7 @@
                                     <img src="../../images/goods_03.png" alt="">
                                 </div>
                                 <div class="has_text">
-                                    <p>[温馨提示]：您的订单已签收~点击查看物流详情！<em>2018-12-08 12:15:22</em></p>
+                                    <p>[温馨提示]：您的订单已签收~<a href="../order/package.html" target="_blank">点击查看物流详情！</a><em>2018-12-08 12:15:22</em></p>
                                     <p>订单编号：123456789</p>
                                     <p>收货人：小全</p>
                                 </div>
@@ -46,7 +46,11 @@
         </div>
     </div>
 </body>
-<script>
-   
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/vue.min.js"></script>
+<script>  
+    var vm = new Vue({
+        el:"#logistic"
+    })
 </script>
 </html>
