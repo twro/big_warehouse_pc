@@ -309,7 +309,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="scare-buying">
-                                        <div class="buying-pro">
+                                        <div class="buying-pro" >
                                             <span class="country-img"></span>
                                         </div>
                                         <p class="scare-txt">【保税】港版美素佳儿2段金装婴幼奶粉900g...</p>
@@ -642,16 +642,7 @@
 
 
     // 楼层跳跃
-    if ($(window).scrollTop() > 1600) {
-        $("#skip").show()
-    }
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > 1600) {
-            $("#skip").show()
-        } else {
-            $("#skip").hide()
-        }
-    });
+
     var flag = true;
     //1. 获得每层楼距离页面顶部的距离，并将它们放入一个数组中。
     var floorArr = [];
@@ -677,7 +668,11 @@
                 index = floorArr.length - 1;
             }
 
-
+            if ($(window).scrollTop() > 1600) {
+                $("#skip").show()
+            } else {
+                $("#skip").hide()
+            }
             if ($(window).scrollTop() > 800) {
                 $("#rightNav").show()
             };
@@ -723,7 +718,6 @@
                 $(window).on("scroll", scrollMove)
             });
         }
-
 
     })
 
@@ -788,10 +782,10 @@
     // 倒计时
     var liArr = document.querySelectorAll(".sale-time li");
     var timer = setInterval(getTime, 1);
-
-    function getTime() {
+    var data = "2018-11-14 14:32:50";
+    function getTime(date) {
         var nowtime = new Date();
-        var future = new Date("2018/11/1 14:32:50");
+        var future = new Date(data);
         var timeSum = future.getTime() - nowtime.getTime();
         var hour = parseInt(timeSum / 1000 / 60 / 60);
         var minu = parseInt(timeSum / 1000 / 60 % 60);
@@ -810,7 +804,7 @@
         liArr[2].innerHTML = minu;
         liArr[4].innerHTML = sec;
     }
-    getTime()
+    getTime(data)
 
 
     // 返回顶部动画
