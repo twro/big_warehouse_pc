@@ -1,0 +1,21 @@
+<view class="order-head">
+    <image src='../../images/orderbg1.png'></image>
+    <view class="order-txt">
+        <text>待付款</text>
+        <text>剩余：2时21分30秒</text>
+    </view>
+</view>
+
+<view class="order-ads">
+    <view class="ads-txt">
+     <text>张三</text>
+     <text>123****4567</text>
+    </view>
+    <navigator class="adr-box">
+       <image src="../../images/adr-icon.png"></image>
+      <text class="newLine">广东省深圳市福田区八卦岭地铁站B出口541栋汉富中心3楼云之商科技有限公司</text>
+    </navigator>
+</view>
+
+<view class="space"></view>
+<view class="title-bar">商品信息</view>
