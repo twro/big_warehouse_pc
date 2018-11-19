@@ -1,0 +1,30 @@
+/*文字换行*/
+.newLine{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+
+
+
+
+
+}
+
+/* 分割线 */
+.space{
+   width: 100%;
+	 height: 20rpx;
+	 background-color: #f8f8f8;
+}
+
+/* 订单二级标题 */
+.title-bar{
+   padding:40rpx 0 40rpx 30rpx;
+   font-size: 14px;
+	letter-spacing: 2rpx;
+	color: #222222;
+
+}
