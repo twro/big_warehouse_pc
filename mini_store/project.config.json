@@ -40,9 +40,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "单页模式",
-					"pathName": ""
+					"query": "gistice"
+
 				}
 			]
 		}
