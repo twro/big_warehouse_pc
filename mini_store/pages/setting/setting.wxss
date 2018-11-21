@@ -1,0 +1,27 @@
+.setting{
+  background-color:#f8f8f8;
+  font-size:16px;
+  color:#000;
+}
+.wx-txt{
+   padding:40rpx 30rpx;
+   background-color:#fff;
+   border-bottom:1px solid #dbdbdb;
+}
+.shop-tel{
+   padding:40rpx 30rpx;
+  background-color:#fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.shop-tel image{
+  width:17rpx;
+  height:30rpx;
+
+
+}
+.setting-tel{
+  margin-left:30rpx;
+}

@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wx1fd1697725ffb335",
-	"projectname": "mini_store1",
+	"projectname": "mini_store",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -39,9 +39,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "单页模式",
-					"pathName": "pages/orderInfo/orderInfo"
+					"pathName": "pages/setting/setting",
+					"query": "gistice"
 				}
 			]
 		}
