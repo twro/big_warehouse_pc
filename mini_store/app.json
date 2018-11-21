@@ -1,7 +1,19 @@
 {
   "pages": [
     "pages/index/index",
-     "pages/orderInfo/orderInfo"
+    "pages/orderInfo/orderInfo",
+    "pages/mYorder/mYorder",
+    "pages/classify/classify",
+    "pages/classifyList/classifyList",
+    "pages/sureOrder/defaultOrder/sureOrder",
+    "pages/sureOrder/postOrder/postOrder",
+    "pages/idcardlist/idcardlist",
+    "pages/addidcard/addidcard",
+    "pages/address/address",
+    "pages/addAddress/addAddress",
+    "pages/editAddress/editAddress",
+    "pages/search/search"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

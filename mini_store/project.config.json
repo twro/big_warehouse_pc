@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"appid": "wx1fd1697725ffb335",
-	"projectname": "mini_store1",
+	"projectname": "mini_store",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -41,7 +42,7 @@
 				{
 					"id": -1,
 					"name": "单页模式",
-					"pathName": "pages/orderInfo/orderInfo"
+					"pathName": ""
 				}
 			]
 		}
