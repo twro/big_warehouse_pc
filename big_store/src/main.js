@@ -7,10 +7,7 @@ import router from './router'
 import App from './App'
 import 'vue-ydui/dist/ydui.flexible'
 import 'vue-ydui/dist/ydui.base.css'
-
-FastClick.attach(document.body)
-
-
+// FastClick.attach(document.body)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
