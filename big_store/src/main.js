@@ -5,11 +5,11 @@ import FastClick from 'fastclick'
 // import store from './store'
 import router from './router'
 import App from './App'
-
+import 'vue-ydui/dist/ydui.flexible'
 import 'vue-ydui/dist/ydui.base.css'
 
 FastClick.attach(document.body)
-Vue.prototype.redirect = getUser
+
 
 Vue.config.productionTip = false
 
