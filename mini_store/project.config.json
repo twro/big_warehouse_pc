@@ -42,8 +42,8 @@
 				{
 					"id": 0,
 					"name": "单页模式",
+					"pathName": "pages/detail/detail",
 					"query": "gistice"
-
 				}
 			]
 		}

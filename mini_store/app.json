@@ -18,7 +18,9 @@
      "pages/login/login",
      "pages/personal/personal",
      "pages/agreement/agreement",
-     "pages/setting/setting"
+     "pages/setting/setting",
+     "pages/cart/cart",
+     "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

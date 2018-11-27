@@ -9,7 +9,7 @@ function showItem(addrList, addrSelect, addrListIndex) {
 		return addrSelect[addrListIndex] || addrListIndex == 0
 	}
 }
-
+  
 
 module.exports = {
 	showItem: showItem
