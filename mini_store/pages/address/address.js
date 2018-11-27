@@ -1,11 +1,13 @@
 // pages/address/address.js
+var app = getApp();
+const util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    leftHeight: wx.getSystemInfoSync().windowHeight - 60,
+    leftHeight: 0,
     bottomHeight:0,
   },
 
@@ -13,7 +15,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.globalData.util.showLoading("请稍后",1000)
+    console.log()
   },
 
   /**
@@ -79,5 +82,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  editAddress:function(e){
+    const id = e.currentTarget.dataset.idx;
+    wx.navigateTo({
+      url: '/pages/editAddress/editAddress?id='+id,
+    })
+  },
+  delAddress:function(e){
+    const idx = e.currentTarget.dataset.idx;
+    const self = this;
+    util.alertViewWithCancel("确定删除吗？","",function(){
+      util.postRequest({id:idx},function(res){
+        if (res.statusCode == 400){
+          util.showSuccess("已删除");
+          self.onLoad();
+        }
+      })
+    })
+  },
+  addAddress:function(){
+    wx.navigateTo({
+      url: '/pages/addAddress/addAddress',
+    })
   }
 })

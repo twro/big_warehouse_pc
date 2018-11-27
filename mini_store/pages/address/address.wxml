@@ -12,13 +12,13 @@
           <view class='address-detail'>
             <text class='address-txt'>广东省深圳市福田区八卦岭地铁站B出口541栋汉富中心云之商科技有限公司</text>
           </view>
-          <image class='edit' src='../../images/edit.png'></image>
-          <image class='del' src='../../images/del.png'></image>
+          <image class='edit' src='../../images/edit.png' bindtap='editAddress' data-idx='{{idx}}'></image>
+          <image class='del' src='../../images/del.png' bindtap='delAddress' data-idx='{{idx}}'></image>
         </view>
       </view>
     </scroll-view>
     <view class='addNew'>
-      <text class='add-newaddress'>新增地址</text>
+      <text class='add-newaddress' bindtap='addAddress'>新增地址</text>
     </view>
   </view>
 </view>

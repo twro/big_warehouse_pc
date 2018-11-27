@@ -1,3 +1,4 @@
+const util = require("../../utils/util.js");
 Page({
 
   /**
@@ -5,24 +6,31 @@ Page({
    */
   data: {
     leftHeight: 0,
-    addressDefault: []
+    address: [],
+    name: '',
+    phone: '',
+    detail: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options)
     this.setData({
       address: [{
-        name: '贵州'
-      },
-      {
-        name: '遵义市'
-      },
-      {
-        name: '遵义县'
-      }
-      ]
+          name: '贵州'
+        },
+        {
+          name: '遵义市'
+        },
+        {
+          name: '遵义县'
+        }
+      ],
+      name: "张三",
+      phone: "13412345678",
+      detail: "不知道啥地方去"
     })
   },
 
@@ -30,10 +38,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    
+
     wx.getSystemInfo({
       success: (res) => {
-        console.log(res)
         this.setData({
           leftHeight: (res.windowHeight - 20)
         });
@@ -45,7 +52,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+
   },
 
   /**
@@ -87,4 +94,38 @@ Page({
       address: e.detail
     })
   },
+  savePersonInfo: function(e) {
+    const value = e.detail.value;
+    const telRule = /^1[3|4|5|7|8]\d{9}$/;
+    const nameRule = /^[\u2E80-\u9FFF]+$/;
+    if (value.name == "") {
+      util.showFail("名字不能为空");
+    } else if (!nameRule.test(value.name)) {
+      util.showFail("请输入中文名称")
+    } else if (value.telphone == "") {
+      util.showFail("手机号码不能为空")
+    } else if (!telRule.test(value.telphone)) {
+      util.showFail('手机号码格式不正确')
+    } else if (value.area == "") {
+      util.showFail("地址不能为空")
+    } else if (value.detail == "") {
+      util.showFail("详细地址不能为空")
+    } else {
+      // util.postRequest(value,function(res){
+      //   if (res.statusCode==400){
+
+      //   }
+      // })
+      util.showSuccess("修改成功");
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1,
+          success: function() {
+            var page = getCurrentPages().pop();
+            page.onLoad();
+          }
+        })
+      }, 3000)
+    }
+  }
 })
