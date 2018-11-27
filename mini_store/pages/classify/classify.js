@@ -76,5 +76,9 @@ Page({
   },
   catchTouchMove: function (res) {
     return false
+  },
+  getDataList(e){
+    console.log(e.currentTarget.dataset.idx);
+    // 请求数据
   }
 })
