@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="login-head">
+      <img src="../../assets/images/login.png" alt="">
     </div>
 
-
     <div class="form-list">
-      <input type="number" placeholder-class="input-placeholder" name="tel"  placeholder="请输入您的手机号码"    maxlength="11"/>
+      <input type="number"  name="tel"  placeholder="请输入您的手机号码"    maxlength="11"/>
     </div>
     <div class="form-list getCode">
       <input type="number" name="code"  placeholder="请输入短信验证码"  maxlength="4"/>
-      <button class="getMsg" >2</button>
+      <button class="getMsg" >获取验证码</button>
     </div>
     <div class="login-btn">登录</div>
     <div class="agreement">
@@ -27,11 +27,14 @@
 </script>
 
 <style scoped lang="less">
+  body{
+    background-color: #fff;
+  }
   .login-head{
     margin:60/100rem 0  80/100rem 0;
     text-align: center;
   }
-  .login-head image{
+  .login-head img{
     width:250/100rem;
     height:87/100rem;
   }
@@ -45,6 +48,7 @@
     opacity: 0.9;
   }
   .form-list input{
+    width: 100%;
     background-color: #f8f8f8;
     padding-left:20/100rem;
     height: 90/100rem;
@@ -75,6 +79,9 @@
     border-radius: 5/100rem;
     opacity: 0.9;
     color: #ffffff;
+    text-align: center;
+    line-height: 90/100rem;
+    font-size:32/100rem;
   }
   .agreement{
     display: flex;
