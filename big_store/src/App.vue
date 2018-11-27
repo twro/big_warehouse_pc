@@ -58,4 +58,8 @@ html {
 #app {
   height: 100%;
 }
+  input,button{
+    outline: none;
+    border: none;
+  }
 </style>
