@@ -2,53 +2,31 @@
   width:600px;
   margin:50px auto 0;
 }
+.step_img{
+  margin:0 auto;
+}
 .step-box{
+  height:54px;
   position: relative;
-  .edit-bar{
-    position: absolute;
-    width: 231px;
-    height: 8px;
-    background-color: #dcdcdc;
-    margin-top:15px;
-    &.bar-active{
-      background-color: #23c279;
-    }
-  }
-  .one-bar{
-    left:48px;
-  }
-  .two-bar{
-    left:318px;
-  }
-
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #222222;
 }
-.step-item{
-  width:58px;
-
-  p{
-    text-align: center;
-    margin-top:12px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: #222222;
-  }
-  .edit-step1{
-    margin:0 auto;
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-color: #f2f2f2;
-    border: solid 5px #dcdcdc;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 30px;
-    &.end-bg{
-      color:#fff;
-      background-color: #23c279;
-    }
-  }
+.step1-txt{
+  position: absolute;
+  left:30px;
+  top:43px;
 }
-
+.step2-txt{
+  position: absolute;
+  left:258px;
+  top:43px;
+}
+.step3-txt{
+  position: absolute;
+  right:30px;
+  top:43px;
+}
 .yz-phone{
   font-size: 12px;
   .phone-num{
@@ -151,11 +129,12 @@
 }
 
 .set_success{
+  text-align: center;
   margin-top:30px;
-  p{
-    text-align: center;
-    font-size: 12px;
+  .success-pwd{
+
+    font-size: 16px;
     letter-spacing: 1px;
-    color: #999999;
+    color: #f5174a;
   }
 }

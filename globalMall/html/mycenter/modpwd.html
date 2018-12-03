@@ -11,26 +11,22 @@
 
 <body>
      <div class="edit-pwd" id="app">
-          <div class="step-box clearfix">
-              <div class="step-item fl" style="margin-right:212px;">
-                  <span class="edit-step1 end-bg">1</span>
-                  <p>验证身份</p>
-              </div>
-              <div class="edit-bar one-bar"></div>
-              <div class="step-item fl " style="margin-right:212px;">
-                  <span class="edit-step1 add_color1">2</span>
-                  <p>重置密码</p>
-              </div>
-              <div class="edit-bar two-bar"></div>
-              <div class="step-item fl">
-                  <span class="edit-step1 add_color2">3</span>
-                  <p>完成</p>
-              </div>
-          </div>
+        <div class="step-box">
+            <img class="step_img" src="../../images/pwd-step1.png" alt="">
+            <p class="step1-txt">手机号认证</p>
+            <p class="step2-txt">重置支付密码</p>
+            <p class="step3-txt">修改完成</p>
+        </div>
          <div class="yz-phone" style="display:block ">
              <p class="phone-num">验证手机：13689630268</p>
+             <div class="clearfix list-inp" style="margin: 0 0 14px 127px; display: none">
+                 <label class="fl inp-lab">支付密码：</label>
+                 <div class="time-select fl">
+                     <input type="password" class="wallet-inp" placeholder="请输入 6位数字的支付密码" value="">
+                 </div>
+             </div>
                 <div class="pwd-yzm clearfix">
-                    <label class="fl">验证码：</label>
+                    <label class="fl">短信验证码：</label>
                     <div class="pwd-box fl">
                         <input type="text" class="pwd-inp" placeholder="短信验证码">
                     </div>
@@ -43,22 +39,21 @@
             <div class="pwd-yzm clearfix">
                 <label class="fl" style="margin-right:15px;">新密码：</label>
                 <div class="pwd-box set_pwd_inp fl">
-                    <input type="text" class="pwd-inp" placeholder="请输入6-20位字符或数字组合的密码">
+                    <input type="password" class="pwd-inp" placeholder="请输入6-20位字符或数字组合的密码">
                 </div>
             </div>
             <div class="pwd-yzm clearfix">
-                <label class="fl">确认密码：</label>
+                <label class="fl">确认支付密码：</label>
                 <div class="pwd-box set_pwd_inp fl">
-                    <input type="text" class="pwd-inp" placeholder="请再次输入6-20位字符或数字组合的密码">
+                    <input type="password" class="pwd-inp" placeholder="请再次输入6-20位字符或数字组合的密码">
                 </div>
             </div>
             <div class="next-btn" id="next-btn1">确定</div>
         </div>
 
          <div class="set_success" style="display: none">
-             <p>恭喜您！密码重置成功，赶紧重新登录吧~</p>
-             <p class="info-finish"><span class="num-red" id="getTime">30</span>秒后自动跳转到登录界面</p>
-             <div class="next-btn">立即登录</div>
+             <p class="success-pwd"><img class="suc-icon" src="../../images/success.png" alt="">恭喜您，支付密码重置成功！</p>
+             <div class="next-btn" style="margin:50px auto 0;">返回进货车</div>
          </div>
          
      </div>
@@ -99,37 +94,6 @@
         });
 
 
-        //加载时间
-        function getTime() {
-            var isBegin = false ;
-            var interval;
-            var count;
-            //总倒计时
-            var totalTime = 30;
-            if(isBegin) {
-                return;
-            }
-            //倒计时
-            count = 0;
-            $("#getTime").text((totalTime - count));
-            interval = setInterval(function() {
-                count++;
-                if(totalTime-count<10){
-                    $("#getTime").text('0'+(totalTime - count));
-                }else{
-                    $("#getTime").text((totalTime - count));
-                }
-
-                if(count >= totalTime) {
-                    clearInterval(interval);
-                    isBegin = false;
-                    $(".info-finish").text("正在跳转...");
-                }
-            }, 1000);
-            isBegin = true;
-        }
-        getTime();
-
 
         $("#next-btn").click(function () {
             var getCode = $(".pwd-inp").val();
@@ -143,17 +107,13 @@
             }
             $(this).parent().hide();
             $(".set_pwd").show();
-            $(".add_color1").addClass("end-bg");
-            $(".one-bar").addClass("bar-active");
+            $(".step_img").attr('src', '../../images/pwd-step2.png');
         })
 
         $("#next-btn1").click(function () {
             $(this).parent().hide();
             $(".set_success").show();
-            $(".add_color1").addClass("end-bg");
-            $(".add_color2").addClass("end-bg");
-            $(".one-bar").addClass("bar-active");
-            $(".two-bar").addClass("bar-active");
+            $(".step_img").attr('src', '../../images/pwd-step3.png');
         })
 
 

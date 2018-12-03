@@ -9,6 +9,9 @@ export default new Router({
   routes: [{
     path: '/',
     name: 'Login',
-    component: Login
+    component: Login,
+    meta:{
+      fhide:false
+    }
   }]
 })
