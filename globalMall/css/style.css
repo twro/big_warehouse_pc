@@ -2232,7 +2232,7 @@ tbody td {
 }
 .register-box {
   margin-top: 100px;
-  height: 737px;
+  min-height: 737px;
   background-color: #ffffff;
   box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.16);
   border-radius: 10px;
@@ -2254,6 +2254,9 @@ tbody td {
 .form-box {
   width: 512px;
   margin: 90px auto 0;
+}
+.inp-item label {
+  margin-top: 12px;
 }
 .inp-item .inp-title {
   margin-top: 14px;
@@ -2319,7 +2322,7 @@ tbody td {
   letter-spacing: 1px;
   color: #9d9d9d;
 }
-#login-btn {
+.login-btn {
   width: 200px;
   height: 50px;
   background-color: #f5174a;
@@ -2445,6 +2448,10 @@ tbody td {
   font-size: 12px;
   letter-spacing: 1px;
   color: #333;
+}
+.logister-wrap {
+  border: 0;
+  padding: 0 0 100px 0 ;
 }
 .upload-item {
   margin-right: 12px;
@@ -3055,10 +3062,66 @@ tbody td {
   text-align: center;
   letter-spacing: 2px;
   color: #444444;
+  margin-bottom: 30px;
 }
 .forget-wrap {
   margin: 0 auto;
-  width: 370px;
+  width: 330px;
+}
+.forget-wrap .tel2 {
+  width: 100%;
+  height: 42px;
+}
+.forget-wrap .forget-btn {
+  margin-top: 16px;
+  height: 42px !important;
+  letter-spacing: 1px;
+  font-size: 14px  !important;
+  background-color: #f5174a;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+  outline: none;
+  width: 330px;
+}
+.verify-box .verify-inp {
+  width: 200px;
+}
+.verify-box .verify-inp .inp {
+  width: 160px;
+}
+.verify-txt {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 22px;
+}
+.again-code {
+  width: 108px;
+  height: 42px;
+  background-color: #f5174a;
+  border: solid 1px #e4e4e4;
+  text-align: center;
+  line-height: 42px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.againActive {
+  background-color: #fff;
+  letter-spacing: 1px;
+  color: #a3a3a3;
+}
+.reset-success {
+  text-align: center;
+  font-size: 14px;
+  color: #616564;
+}
+.reset-img {
+  margin: 0 auto 20px;
+  display: block;
+  width: 68px;
 }
 .null-wrap {
   background-color: #f4f4f4;
@@ -3079,18 +3142,20 @@ tbody td {
 .balance {
   margin: 50px 0;
 }
-.balance-txt {
+.balance-txt1 {
+  font-size: 26px;
+  text-align: center;
   margin-top: 8px;
-  font-size: 18px;
   letter-spacing: 1px;
   color: #222222;
 }
-.balance-num {
-  font-size: 30px;
+.balance-num1 {
+  font-size: 28px;
   letter-spacing: 2px;
   color: #f5174a;
 }
 .recharge {
+  display: block;
   width: 144px;
   height: 46px;
   background-color: #f5174a;
@@ -3189,6 +3254,13 @@ tbody td {
 }
 .list-inp {
   margin-right: 22px;
+}
+.detail {
+  background-color: #ccc;
+}
+.wallet-btn {
+  width: 380px;
+  margin: 0 auto;
 }
 .set-pwd {
   margin: 40px 0 0 30px;
