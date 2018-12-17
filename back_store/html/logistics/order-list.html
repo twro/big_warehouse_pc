@@ -42,6 +42,15 @@
         .x-orange{
             color:#FF6666;
         }
+        .send-type{
+            display: none;
+        }
+        .send-type .layui-input-block{
+            margin-left:50px;
+        }
+        .send-type  .layui-form-radio{
+            margin-top:0;
+        }
     </style>
 </head>
 
@@ -159,7 +168,7 @@
                                             <a style="color:blue;" href="javascript:;" onclick="x_admin_show('查看详情','./order-info.html')">查看</a>
                                             <a style="color:blue;" href="javascript:;" onclick="refuse()">拒绝</a>
                                             <a style="color:blue;" href="javascript:;" onclick="getOrder()">接单</a>
-                                            <a style="color:blue;" href="javascript:;" onclick="x_admin_show('发货','./send.html')">发货</a>
+                                            <a style="color:blue;" href="javascript:;" onclick="sendType()">发货</a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -265,7 +274,7 @@
                                             <a style="color:blue;" href="javascript:;" onclick="x_admin_show('查看明细','./integral-detail.html')">查看</a>
                                             <a style="color:blue;" href="javascript:;" onclick="refuse()">拒绝</a>
                                             <a style="color:blue;" href="javascript:;" onclick="getOrder()">接单</a>
-                                            <a style="color:blue;" href="javascript:;" onclick="x_admin_show('发货','./send.html')">发货</a>
+                                            <a style="color:blue;" href="javascript:;" onclick="sendType()">发货</a>
                                             <a style="color:blue;" href="javascript:;" onclick="transfer()">转账</a>
                                         </td>
                                     </tr>
@@ -375,7 +384,7 @@
                                             <a style="color:blue;" href="javascript:;" onclick="x_admin_show('查看详情','./wl-info.html')">查看</a>
                                             <a style="color:blue;" href="javascript:;" onclick="refuse()">拒绝</a>
                                             <a style="color:blue;" href="javascript:;" onclick="getOrder()">接单</a>
-                                            <a style="color:blue;" href="javascript:;" onclick="x_admin_show('发货','./send.html')">发货</a>
+                                            <a style="color:blue;" href="javascript:;" onclick="sendType()">发货</a>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -480,7 +489,7 @@
                                             <a style="color:blue;" href="javascript:;" onclick="x_admin_show('查看详情','./order-info.html')">查看</a>
                                             <a style="color:blue;" href="javascript:;" onclick="refuse()">拒绝</a>
                                             <a style="color:blue;" href="javascript:;" onclick="getOrder()">接单</a>
-                                            <a style="color:blue;" href="javascript:;" onclick="x_admin_show('发货','./send.html')">发货</a>
+                                            <a style="color:blue;" href="javascript:;" onclick="sendType()">发货</a>
                                             <a style="color:blue;" href="javascript:;" onclick="transfer()">转账</a>
                                         </td>
                                     </tr>
@@ -540,13 +549,13 @@
   </div>
 
    <div class="send-type">
-      <p>请勾选发货方式</p>
+      <p style="text-align: center; margin:30px 0; font-size:16px;">请勾选发货方式</p>
        <div class="layui-form-item">
            <form class="layui-form" action="">
            <div class="layui-input-block">
                <input type="radio" name="type" value="无需发货" title="无需发货" checked="">
-               <div style="height:34px;line-height: 34px;"><input type="radio" name="type" value="自配送" title="自配送"><span ">店铺自己配送，无需物流公司配送</span></div>
-               <div><input type="radio" name="type" value="第三方物流" title="第三方物流"><span>选择物流公司配送订单</span></div>
+               <div style="height:34px;line-height: 34px;"><input type="radio" name="type" value="自配送" title="自配送"><span style="color:#999;">店铺自己配送，无需物流公司配送</span></div>
+               <div><input type="radio" name="type" value="第三方物流" title="第三方物流"><span style="color:#999;">选择物流公司配送订单</span></div>
            </div>
            </form>
        </div>
@@ -642,6 +651,8 @@
             });
         }
 
+
+
         // 拒绝提示框
         function refuse(){
             layer.open({
@@ -690,6 +701,24 @@
                 area: ['400px', '400px'],
                 offset: 'c', //右下角弹出
                 content: $(".transfer"), //iframe的url，no代表不显示滚动条
+            });
+        }
+
+
+        // 发货弹框
+        function sendType(){
+            layer.open({
+                type: 1,
+                btn:["取消","确定"],
+                fix: false, //不固定
+                maxmin: true,
+                shadeClose: true,
+                shade:0.4,
+                btnAlign: 'c',
+                title: "用户信息", //标题
+                area: ['400px', '400px'],
+                offset: 'c', //右下角弹出
+                content: $(".send-type"), //iframe的url，no代表不显示滚动条
             });
         }
     </script>
