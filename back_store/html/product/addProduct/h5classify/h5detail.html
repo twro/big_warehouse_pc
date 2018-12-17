@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../../../../css/ydui.css"></script>
+    <link rel="stylesheet" href="../../../../lib/layui/css/layui.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../../css/ydui.css">
+    <link rel="stylesheet" href="../../../../css/xadmin.min.css">
+    <script src="../../../../js/xadmin.js"></script>
+    <script type="text/javascript" src="../../../../lib/layui/layui.js" charset="utf-8"></script>
+    <title>消费列表</title>
+    <style>
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .fw {
+            font-weight: bold;
+        }
+
+        .price {
+            width: 100%;
+            height: 80px;
+            padding: 0 20px;
+            font-size: 16px;
+        }
+
+        .price p {
+            height: 40px;
+        }
+
+        .price span {
+            line-height: 40px;
+        }
+
+        .rule-list {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .rule-list li {
+            padding: 10px 20px;
+            border: 1px solid #999;
+            margin-top: 10px;
+        }
+
+        .rule-list li p {
+            line-height: 25px;
+        }
+
+        .datas {
+            padding: 10px 20px;
+        }
+
+        .datas p {
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        .detail-pic {
+            width: 100%;
+            padding: 0 10px;
+            overflow: hidden;
+        }
+
+        .detail-pic img {
+            width: 100%;
+            height: 200px;
+            background: red;
+        }
+
+        .m-tabbar {
+            width: 100%;
+            height: 50px;
+            z-index: 1;
+        }
+
+        .m-tabbar a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            color: #00f;
+        }
+
+        .m-tabbar .tabbar-txt {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cell-right {
+            height: 50px;
+        }
+
+        .m-cell {
+            border: 1px solid #999;
+            margin-top: 10px;
+        }
+
+        .cell-arrow:after {
+            margin-left: 10px;
+            margin-right: 0px;
+            font-size: 16px;
+            color: #000;
+        }
+        .sameP input{
+            width: 200px;
+            height: 10x;
+            line-height: 10px;
+            border: 1px solid #999;
+            outline: none;
+            padding: 5px;
+        }
+        .sameP{
+            display: none;
+        }
+        .selectTypes{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 32%;
+            top: 0;
+            z-index: 21;
+            max-width: 750px;
+            margin: auto;
+            background: rgba(0, 0, 0, .6);
+            display: none;
+        }
+        .selectTypes .selectWrap{
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            bottom: 0;
+            background: #fff;
+        }
+        .selectTypes .one{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .selectTypes a{
+            display: inline-block;
+            position: absolute;
+            top: 3px;
+            font-size: 12px;
+        }
+
+        .selectTypes .cancel{
+            left: 10px;
+        }
+        .selectTypes .sureBtn{
+            right: 10px;
+        }
+
+        .selectTypes .one span{
+            font-size: 14px;
+            display: inline-block;
+            line-height: 35px;
+        }
+
+        .selectTypes .two{
+            width: 100%;
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="g-flexview">
+        <!-- <header class="m-navbar">
+            <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+            <div class="navbar-center"><span class="navbar-title">消费列表</span>
+            </div>
+        </header> -->
+        <div class="g-scrollview" id="recordList">
+            <div class="layui-carousel" id="test1">
+                <div carousel-item>
+                    <div>条目1</div>
+                    <div>条目2</div>
+                    <div>条目3</div>
+                    <div>条目4</div>
+                    <div>条目5</div>
+                </div>
+            </div>
+
+            <div class="price">
+                <p>商品名称，需要显示全部</p>
+                <p><span class="fl fw"><em>￥</em>123.05-891.00</span><span class="fr">热度：17</span></p>
+            </div>
+            <div class="m-cell selectType" style="display:none;">
+                <div class="cell-item">
+                    <div class="cell-right cell-arrow nameText">请选择分类</div>
+                </div>
+            </div>
+            <div class="rule-list">
+                <ul>
+                    <li>
+                        <p>规格属性：红色-L码-100件装</p>
+                        <p>平台价格：￥1222.00</p>
+                        <p>库存：1000件</p>
+                        <p class="sameP">加价额度：<input type="text" class="ipt"></p>
+                        <p class="sameP">销售价格：￥1222.00</p>
+                        <p class="sameP">预计收入：￥222.00</p>
+                    </li>
+                    <li>
+                        <p>规格属性：红色-L码-100件装</p>
+                        <p>平台价格：￥1222.00</p>
+                        <p>库存：1000件</p>
+                        <p class="sameP">加价额度：<input type="text" class="ipt"></p>
+                        <p class="sameP">销售价格：￥1222.00</p>
+                        <p class="sameP">预计收入：￥222.00</p>
+                    </li>
+                    <li>
+                        <p>规格属性：红色-L码-100件装</p>
+                        <p>平台价格：￥1222.00</p>
+                        <p>库存：1000件</p>
+                        <p class="sameP">加价额度：<input type="text" class="ipt"></p>
+                        <p class="sameP">销售价格：￥1222.00</p>
+                        <p class="sameP">预计收入：￥222.00</p>
+                    </li>
+                </ul>
+            </div>
+            <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:20px;">商品参数</blockquote>
+            <div class="datas">
+                <p>产地：加拿大</p>
+                <p>品牌：测试品牌A</p>
+                <p>系列：测试系列</p>
+                <p>规格：230g</p>
+                <p>效期：2021年09月-2021年10月</p>
+                <p>贸易类型：香港仓</p>
+            </div>
+            <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:20px;">商品详情</blockquote>
+            <div class="detail-pic">
+                <img src="" alt="">
+            </div>
+            <div class="selectTypes">
+                <div class="selectWrap">
+                    <p class="one"><a href="javascript:;" class="cancel">取消</a><span class="text">选择分类，方便买家筛选</span><a
+                            href="javascript:;" class="sureBtn">确定</a></p>
+                    <p class="two">一级分类名称</p>
+                    <form class="layui-form layui-col-md12 x-so" style="margin-top:10px;">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="margin-left:10px;">
+                                <input type="radio" name="sex" value="1" title="二级分类名称" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="margin-left:10px;">
+                                <input type="radio" name="sex" value="1" title="二级分类名称2"><label for="">0件商品</label>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block" style="margin-left:10px;">
+                                <input type="radio" name="sex" value="1" title="二级分类名称1"><label for="">0件商品</label>
+                            </div>
+                        </div>
+                        <xblock style="margin-top:10px;box-sizing: border-box;text-align: center;">
+                            <button class="layui-btn layui-btn-primary" type="button " onclick="prompt();"><i class="layui-icon"></i>新建分类</button>
+                        </xblock>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="m-tabbar">
+            <a href="javascript:;" class="tabbar-item sameA" style="border-right:1px solid #999;">
+                <span class="tabbar-txt">放入仓库</span>
+            </a>
+            <a href="javascript:;" class="tabbar-item sameA">
+                <span class="tabbar-txt">上架出售</span>
+            </a>
+            <a href="javascript:;" style="display:none;" class="wid10">确定</a>
+        </footer>
+    </section>
+</body>
+
+<script>
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1',
+            width: '100%' //设置容器宽度
+                ,
+            arrow: 'none' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+
+    $(".sameA").on('click', function () {
+        $(".sameA").hide();
+        $(".wid10").show();
+        $(".sameP").show();
+        $(".selectType").show();
+    })
+
+    $(".wid10").on('click', function () {
+        $(".sameA").show();
+        $(".wid10").hide();
+        $(".sameP").hide();
+        $(".selectType").hide();
+    })
+
+
+    $(".selectType").on("click", function () {
+        $(".selectTypes").show();
+    });
+
+    $(".cancel").on('click', function () {
+        $(".selectTypes").hide();
+    })
+    var newData = '';
+    $(".sureBtn").on('click', function () {
+        console.log(newData);
+        console.log($(newData.elem).attr("title"))
+
+        $(".nameText").text($(newData.elem).attr("title"))
+        $(".selectTypes").hide();
+    })
+    layui.use(['form'], function () {
+        var form = layui.form;
+        form.on('radio', function (data) {
+            newData = data;
+        })
+    })
+
+    function prompt() {
+        layer.prompt({
+            title: "新建分类"
+        }, function (value, index, elem) {
+            alert(value); //得到value
+            layer.close(index);
+        });
+    }
+</script>
+
+</html>
