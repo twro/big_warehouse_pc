@@ -13,23 +13,30 @@
 </head>
 
 <body>
-    <div class="login_head">
-        <div class="wrap clearfix">
-            <span class="login_logo fl"></span>
-            <ul class="login_nav fr">
-                <li><a href="javascript:;" >首页</a></li>
-                <li class="login_twoNav">
-                    <a href="javascript:;" class="zs-active login_active">招商加盟 <i class="login-sel"></i></a>
-                    <dl class="twoNav-dd">
-                        <dd><a href="">门店加盟</a></dd>
-                        <dd><a href="">商家入驻</a></dd>
-                    </dl>
-                </li>
-                <li><a href="javascript:;">关于我们</a></li>
-                <li><a href="javascript:;">供应商登录</a></li>
-            </ul>
-        </div>
+<div class="login_head">
+    <div class="wrap clearfix">
+        <span class="login_logo fl"></span>
+        <ul class="login_nav fr">
+            <li><a href="javascript:;" class="login_active">首页</a></li>
+            <li class="login_twoNav">
+                <a href="javascript:;" class="zs-active">招商加盟 <!--<i class="login-sel"></i>--></a>
+                <dl class="twoNav-dd">
+                    <dd><a href="" class="nav-active">门店加盟</a></dd>
+                    <dd><a href="" class="nav-active">商家入驻</a></dd>
+                </dl>
+            </li>
+            <li><a href="about.html">关于我们</a></li>
+            <li class="login_twoNav">
+                <a href="javascript:;" class="zs-active">新闻资讯</a>
+                <dl class="twoNav-dd">
+                    <dd><a href="news.html" class="nav-active">新闻列表</a></dd>
+                    <dd><a href="" class="nav-active">行内新闻</a></dd>
+                </dl>
+            </li>
+            <li><a href="javascript:;">供应商登录</a></li>
+        </ul>
     </div>
+</div>
      <div class="register_banner1">
          <a href="javascript:;"><img src="../../images/banner3.jpg" alt=""></a>
      </div>
@@ -331,12 +338,4 @@
             console.log(this.values)
         }
     });
-    $(".login_twoNav").mouseenter(function () {
-        $(".zs-active").css("color", "#f5174a");
-        $(".twoNav-dd").show();
-    })
-    $(".login_twoNav").mouseleave(function () {
-        $(".zs-active").css("color", "#000");
-        $(".twoNav-dd").hide();
-    })
 </script>
