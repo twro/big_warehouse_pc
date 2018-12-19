@@ -1871,7 +1871,7 @@ tbody td {
   padding: 30px 30px 0 30px;
   box-sizing: border-box;
   width: 418px;
-  height: 524px;
+  min-height: 546px;
   background-color: #ffffff;
   margin-top: 32px;
 }

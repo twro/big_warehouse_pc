@@ -377,8 +377,26 @@ tr td {
         $(function ($) {
             //------生成地区
             GetRegionPlug();
+
         });
         function addArea(obj) {
+            // $(".allcheck").off("click");
+            // var allCheck= $(".allcheck").attr("data-switch");
+            if($(".allcheck").attr("data-switch") === "true"){
+                $(".allcheck").on("click",function () {
+                    $(".place").find("input").prop("checked", true);
+                    ShowTipNum();
+                    $(this).attr("data-switch","false");
+                    // $(this).off("click");
+                    $(".clearCheck").click(
+                        function () {
+                            $(".allcheck").attr("data-switch","true");
+                            $(".place").find("input").prop("checked", false);
+                            $(".ratio").html("");
+                        }
+                    )
+                })
+            }
             var that = $(obj);
             var thatContent= that.text();
             $('#myModal').modal('show');
