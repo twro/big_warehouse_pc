@@ -222,13 +222,29 @@
                 </div><br />
                 <div class="layui-inline" style="margin-top:20px;margin-left: 20px;">
                     <label for="">&nbsp;&nbsp;重量：&nbsp;&nbsp;&nbsp;</label>
-                    <input type="text" name="userphone" placeholder="" autocomplete="off" class="layui-input"><span
-                        style="margin-left:20px;">kg</span>
+                    <input type="text" name="userphone" placeholder="" autocomplete="off" class="layui-input">
+                    <div class="layui-input-inline" style="margin-left:20px;">
+                        <select name="contrller">
+                            <option value="">请选择重量单位</option>
+                            <option value="0">吨(t)</option>
+                            <option value="1">千克(kg)</option>
+                            <option value="2">克(g)</option>
+                            <option value="3">斤</option>
+                            <option value="4">两</option>
+                        </select>
+                    </div>
                 </div><br />
                 <div class="layui-inline" style="margin-top:20px;margin-left: 20px;">
                     <label for="">&nbsp;&nbsp;体积：&nbsp;&nbsp;&nbsp;</label>
-                    <input type="text" name="userphone" placeholder="" autocomplete="off" class="layui-input"><span
-                        style="margin-left:20px;">m³</span>
+                    <input type="text" name="userphone" placeholder="" autocomplete="off" class="layui-input">
+                    <div class="layui-input-inline" style="margin-left:20px;">
+                        <select name="contrller">
+                            <option value="">请选择体积单位</option>
+                            <option value="0">立方米(m³)</option>
+                            <option value="1">立方分米(dm³)</option>
+                            <option value="2">立方厘米(cm³)</option>
+                        </select>
+                    </div>
                 </div><br />
                 <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top:20px;">填写销售属性</blockquote>
                 <div class="list">
@@ -340,23 +356,6 @@
         }).on("mouseout", function () {
             $(this).find(".span").hide();
         })
-
-        // <li>
-        //     <p>&nbsp;规格：&nbsp;&nbsp;红色L码</p>
-        //     <p><span class="x-red">*&nbsp;</span><span>价格<span>：355.3</p>
-        //     <p><span class="x-red">*&nbsp;</span>库存：200</p>
-        //     <div class="pic">
-        //         <div class="pois">
-        //             <img src="../../../../images/1.jpg" alt="">
-        //             <div class="span">
-        //                 <input type="file">
-        //                 <a href="javascript:;">更换</a><a href="javascript:;" onclick="del(9)">删除</a>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </li>
-
-
         function addProductRules() {
             $(".list ul").append(
                 $("<li/>").append(
