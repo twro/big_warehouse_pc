@@ -1,9 +1,4 @@
 //app.js
 App({
-  onLaunch: function() {
-
-  },
-  globalData: {
-
-  }
+  onLaunch:function(){}
 })
