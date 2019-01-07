@@ -37,17 +37,15 @@
 			"list": []
 		},
 		"miniprogram": {
-
 			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "单页模式",
-					"pathName": "pages/detail/detail",
+					"pathName": "pages/mYorder/mYorder",
 					"query": "gistice"
 				}
 			]
-
 		}
 	}
 }

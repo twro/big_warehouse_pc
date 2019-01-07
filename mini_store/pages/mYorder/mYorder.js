@@ -16,7 +16,7 @@ Page({
   data: {
     swiperHeight: "0",
     topTabItems: ["全部", "待付款", "待发货", "待收货", "已完成"],
-    currentTopItem: "0",
+    currentTopItem: 0,
     tabW: 0,
     slideOffset: 0,
     allList: [],
@@ -32,12 +32,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options.id)
+
     const idx = options.id;
-    const offsetW = idx * this.data.tabW;
-    console.log(this.data.tabW)
-    this.setData({
-      currentTopItem: idx,
-    });
+    if (idx !== undefined) {
+      const offsetW = idx * this.data.tabW;
+      this.setData({
+        currentTopItem: idx,
+      });
+    }
     this.refshNewData();
   },
 
