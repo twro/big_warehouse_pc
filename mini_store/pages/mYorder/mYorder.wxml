@@ -9,7 +9,6 @@
     <view class='tab-item {{currentTopItem == idx?"in":""}}' wx:for="{{topTabItems}}" wx:for-index="idx" wx:key="idx" data-idx='{{idx}}' bindtap='switchTab'>{{item}}</view>
     <view class='tab-line-active' style="transform:translateX({{slideOffset}}px);width:{{tabW}}px"></view>
   </view>
-
 </view>
 <swiper class='swiper' style="height:{{searchShow?swiperHeight:swiperHeight+56}}px" current='{{currentTopItem}}' duration='300' bindchange='bindChange'>
   <!-- all -->
