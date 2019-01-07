@@ -41,8 +41,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "test",
-					"pathName": "pages/shopDetail/shopDetail",
+					"name": "单页面编译",
+					"pathName": "pages/brandlist/brandlist",
 					"query": ""
 				}
 			]

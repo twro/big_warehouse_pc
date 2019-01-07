@@ -11,7 +11,8 @@
     "pages/setpwd/setpwd",
     "pages/changepwd/changepwd",
     "pages/changenewpwd/changenewpwd",
-    "pages/mycenter/mycenter"
+    "pages/mycenter/mycenter",
+    "pages/brandlist/brandlist"
   ],
   "window": {
     "backgroundTextStyle": "light",
