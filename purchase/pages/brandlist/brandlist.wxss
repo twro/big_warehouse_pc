@@ -1,9 +1,9 @@
 /* pages/brandlist/brandlist.wxss */
 
 scroll-view {
-  height: 600px;
+  height: 650px;
   float: left;
-  width: 100%;
+  width: 94%;
 }
 
 .wordindex {
