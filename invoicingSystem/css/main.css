@@ -276,25 +276,32 @@ a:hover {
     height: 50px;
 }
 
-.layui-form-item .left-icon {
-    float: left;
-    padding: 10px 15px;
+.left-icon {
+    /* float: left; */
+    display: inline-block;
+    max-height: 38px;
+    min-height: 38px;
+    padding: 9px 15px;
     background: #e6e6e6;
     border: 1px solid #e6e6e6;
-    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    user-select: none;
+    margin-left: -5px;
+    box-sizing: border-box;
 }
 
-.layui-form-item .left-icon .iconfont {
+.left-icon .iconfont {
     font-size: 12px;
     font-weight: normal;
+    cursor: pointer;
 }
 
-.layui-form-item .role-box {
+.role-box {
     position: relative;
     column-width: 180px;
 }
 
-.layui-form-item .role-box .jq-role-inline {
+.role-box .jq-role-inline {
     height: 100%;
     overflow: auto;
 }
@@ -330,4 +337,33 @@ a:hover {
 .layui-form-radioed i,
 .layui-form-radio i:hover {
     color: #DDD;
+}
+
+/* .layui-input,
+.layui-textarea {
+    width: 212px;
+} */
+
+.layui-form-pane {
+    margin-bottom: 10px;
+}
+
+#add_subdata {
+    display: none;
+}
+
+.layui-form.pro::-webkit-scrollbar-track {
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0);
+	border-radius:10px;
+	background-color:transparent;
+}
+.layui-form.pro::-webkit-scrollbar {
+    /* width:auto!important; */
+    height: 10px;
+	background-color:transparent;
+}
+.layui-form.pro::-webkit-scrollbar-thumb {
+	border-radius:10px;
+	-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);
+	background-color:transparent;
 }

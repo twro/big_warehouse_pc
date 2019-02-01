@@ -29,8 +29,8 @@
         <div class="layui-header">
             <!-- logo区域 -->
             <div class="jqadmin-logo-box">
-                <a class="logo" href="http://jqadmin.jqcool.net" title="jQAdmin">
-                    <h1>jQadmin</h1>
+                <a class="logo" href="javascript:;" title="云加商ERP管理系统">
+                    <h1>云加商ERP管理系统</h1>
                 </a>
 
             </div>
@@ -39,7 +39,7 @@
             <div class="jqadmin-main-menu">
                 <ul class="layui-nav clearfix" id="menu" lay-filter="main-menu">
                     <li class="layui-nav-item layui-this">
-                        <a href="javascript:;" data-title="内容管理"><i class="iconfont">&#xe637;</i><span>内容管理</span></a>
+                        <a href="javascript:;" data-title="资料"><i class="iconfont">&#xe637;</i><span>资料</span></a>
                     </li>
                     <li class="layui-nav-item">
                         <a href="javascript:;" data-title="产品管理"><i class="iconfont">&#xe631;</i><span>产品管理</span></a>
@@ -84,16 +84,19 @@
 
                         <dl class="layui-nav-child">
                             <dd class="tab-menu">
-                                <a href="javascript:;"data-url="" data-title="个人信息"> <i class="iconfont " data-icon='&#xe672;'>&#xe672; </i><span>个人信息</span></a>
+                                <a href="javascript:;" data-url="" data-title="个人信息"> <i class="iconfont " data-icon='&#xe672;'>&#xe672;
+                                    </i><span>个人信息</span></a>
                             </dd>
                             <dd>
                                 <a href=""><i class="iconfont ">&#xe64b; </i>退出</a>
                             </dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item tab-menu"><a class="msg" href="javascript:;"data-url="" data-title="站内信息"><i class="iconfont" data-icon='&#xe63c;'>&#xe63c; </i><span class="msg-num">1</span></a></li>
+                    <li class="layui-nav-item tab-menu"><a class="msg" href="javascript:;" data-url="" data-title="站内信息"><i
+                                class="iconfont" data-icon='&#xe63c;'>&#xe63c; </i><span class="msg-num">1</span></a></li>
                 </ul>
-                <button title="刷新" class="layui-btn layui-btn-sm  jq-btn-primary fresh-btn"><i class="iconfont">&#xe62e; </i> </button>
+                <button title="刷新" class="layui-btn layui-btn-sm  jq-btn-primary fresh-btn"><i class="iconfont">&#xe62e;
+                    </i> </button>
             </div>
         </div>
 
@@ -106,49 +109,127 @@
                     <div class="sub-menu" style="display: block;">
                         <ul class="layui-nav layui-nav-tree">
                             <li class="layui-nav-item layui-nav-itemed">
-                                <a href="javascript:;" data-title="内容管理"> <i class="iconfont">&#xe637;</i> <span>内容管理</span> <em class="layui-nav-more"></em> </a>
+                                <a href="javascript:;" data-title="资料管理"> <i class="iconfont">&#xe637;</i> <span>资料管理</span>
+                                    <em class="layui-nav-more"></em> </a>
                                 <dl class="layui-nav-child">
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="文章列表"> <i class="iconfont" data-icon="&#xe62a;">&#xe62a;</i> <span>文章列表</span> </a>
+                                        <a href="javascript:;" data-url="./html/managData/toAndFro.html" data-title="往来单位"> <i class="iconfont"
+                                                data-icon="&#xe62a;">&#xe62a;</i> <span>往来单位</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="文章分类"> <i class="iconfont" data-icon="&#xe635;">&#xe635;</i> <span>文章分类</span> </a>
+                                        <a href="javascript:;" data-url="./html/managData/saleStore.html" data-title="销售门店"> <i class="iconfont"
+                                                data-icon="&#xe635;">&#xe635;</i> <span>销售门店</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="标签管理"> <i class="iconfont" data-icon="&#xe632;">&#xe632;</i> <span>标签管理</span> </a>
+                                        <a href="javascript:;" data-url="./html/managData/member.html" data-title="会员列表"> <i class="iconfont"
+                                                data-icon="&#xe632;">&#xe632;</i> <span>会员列表</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="图标管理"> <i class="iconfont" data-icon="&#xe612;">&#xe612;</i> <span>图标管理</span> </a>
+                                        <a href="javascript:;" data-url="./html/managData/ownerOfCargo.html" data-title="货主列表"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>货主列表</span> </a>
                                     </dd>
                                 </dl>
-                            </li> <span class="layui-nav-bar"></span></ul>
+                            </li>
+                            <li class="layui-nav-item layui-nav-itemed">
+                                <a href="javascript:;" data-title="仓库管理"> <i class="iconfont">&#xe637;</i> <span>仓库管理</span>
+                                    <em class="layui-nav-more"></em> </a>
+                                <dl class="layui-nav-child">
+                                    <dd>
+                                        <a href="javascript:;" data-url="./html/entrepot/regional.html" data-title="地区设置"> <i class="iconfont"
+                                                data-icon="&#xe62a;">&#xe62a;</i> <span>地区设置</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="./html/entrepot/warehouse.html" data-title="仓库设置"> <i class="iconfont"
+                                                data-icon="&#xe635;">&#xe635;</i> <span>仓库设置</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="库区设置"> <i class="iconfont"
+                                                data-icon="&#xe632;">&#xe632;</i> <span>库区设置</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="库架设置"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>库架设置</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="库位设置"> <i class="iconfont"
+                                                data-icon="&#xe632;">&#xe632;</i> <span>库位设置</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="发货地址"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>发货地址</span> </a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="layui-nav-item layui-nav-itemed">
+                                <a href="javascript:;" data-title="物流管理"> <i class="iconfont">&#xe637;</i> <span>物流管理</span>
+                                    <em class="layui-nav-more"></em> </a>
+                                <dl class="layui-nav-child">
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="物流公司"> <i class="iconfont"
+                                                data-icon="&#xe62a;">&#xe62a;</i> <span>物流公司</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="菜鸟面单模板"> <i class="iconfont"
+                                                data-icon="&#xe635;">&#xe635;</i> <span>菜鸟面单模板</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="承运公司"> <i class="iconfont"
+                                                data-icon="&#xe632;">&#xe632;</i> <span>承运公司</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="仓库承运公司"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>仓库承运公司</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="承运方式"> <i class="iconfont"
+                                                data-icon="&#xe632;">&#xe632;</i> <span>承运方式</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="承运商API"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>承运商API</span> </a>
+                                    </dd>
+                                    <dd>
+                                        <a href="javascript:;" data-url="" data-title="承运商资费"> <i class="iconfont"
+                                                data-icon="&#xe612;">&#xe612;</i> <span>承运商资费</span> </a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <span class="layui-nav-bar"></span>
+                        </ul>
                     </div>
                     <div class="sub-menu">
                         <ul class="layui-nav layui-nav-tree">
                             <li class="layui-nav-item">
-                                <a href="javascript:;"data-url="" data-title="产品列表"> <i class="iconfont" data-icon="&#xe61a;">&#xe61a;</i> <span>产品列表</span> </a>
+                                <a href="javascript:;" data-url="" data-title="产品列表"> <i class="iconfont" data-icon="&#xe61a;">&#xe61a;</i>
+                                    <span>产品列表</span> </a>
                             </li>
                             <li class="layui-nav-item">
-                                <a href="javascript:;"data-url="" data-title="品牌管理"> <i class="iconfont" data-icon="&#xe60d;">&#xe60d;</i> <span>品牌管理</span> </a>
+                                <a href="javascript:;" data-url="" data-title="品牌管理"> <i class="iconfont" data-icon="&#xe60d;">&#xe60d;</i>
+                                    <span>品牌管理</span> </a>
                             </li>
                             <li class="layui-nav-item">
-                                <a href="javascript:;"data-url="" data-title="分类管理"> <i class="iconfont" data-icon="&#xe610;">&#xe610;</i> <span>分类管理</span> </a>
+                                <a href="javascript:;" data-url="" data-title="分类管理"> <i class="iconfont" data-icon="&#xe610;">&#xe610;</i>
+                                    <span>分类管理</span> </a>
                             </li>
                         </ul>
                     </div>
                     <div class="sub-menu">
                         <ul class="layui-nav layui-nav-tree">
                             <li class="layui-nav-item layui-nav-itemed">
-                                <a href="javascript:;" data-title="会员管理"> <i class="iconfont">&#xe672;</i> <span>会员管理</span> <em class="layui-nav-more"></em> </a>
+                                <a href="javascript:;" data-title="会员管理"> <i class="iconfont">&#xe672;</i> <span>会员管理</span>
+                                    <em class="layui-nav-more"></em> </a>
                                 <dl class="layui-nav-child">
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="会员列表"> <i class="iconfont" data-icon="&#xe630;">&#xe630;</i> <span>会员列表</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="会员列表"> <i class="iconfont"
+                                                data-icon="&#xe630;">&#xe630;</i> <span>会员列表</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="会员等级"> <i class="iconfont" data-icon=""></i> <span>会员等级</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="会员等级"> <i class="iconfont"
+                                                data-icon=""></i> <span>会员等级</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="会员统计"> <i class="iconfont" data-icon="&#xe60f;">&#xe60f;</i> <span>会员统计</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="会员统计"> <i class="iconfont"
+                                                data-icon="&#xe60f;">&#xe60f;</i> <span>会员统计</span> </a>
                                     </dd>
                                 </dl>
                             </li>
@@ -157,33 +238,42 @@
                     <div class="sub-menu">
                         <ul class="layui-nav layui-nav-tree">
                             <li class="layui-nav-item layui-nav-itemed">
-                                <a href="javascript:;" data-title="系统管理"> <i class="iconfont">&#xe646;</i> <span>系统管理</span> <em class="layui-nav-more"></em> </a>
+                                <a href="javascript:;" data-title="系统管理"> <i class="iconfont">&#xe646;</i> <span>系统管理</span>
+                                    <em class="layui-nav-more"></em> </a>
                                 <dl class="layui-nav-child">
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="系统设置"> <i class="iconfont" data-icon="&#xe689;">&#xe689;</i> <span>系统设置</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="系统设置"> <i class="iconfont"
+                                                data-icon="&#xe689;">&#xe689;</i> <span>系统设置</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="系统日志"> <i class="iconfont" data-icon="&#xe64a;">&#xe64a;</i> <span>系统日志</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="系统日志"> <i class="iconfont"
+                                                data-icon="&#xe64a;">&#xe64a;</i> <span>系统日志</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="栏目管理"> <i class="iconfont" data-icon="&#xe654;">&#xe654;</i> <span>栏目管理</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="栏目管理"> <i class="iconfont"
+                                                data-icon="&#xe654;">&#xe654;</i> <span>栏目管理</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="屏蔽词"> <i class="iconfont" data-icon="&#xe629;">&#xe629;</i> <span>屏蔽词</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="屏蔽词"> <i class="iconfont"
+                                                data-icon="&#xe629;">&#xe629;</i> <span>屏蔽词</span> </a>
                                     </dd>
                                 </dl>
                             </li>
                             <li class="layui-nav-item">
-                                <a href="javascript:;" data-title="权限管理"> <i class="iconfont">&#xe609;</i> <span>权限管理</span> <em class="layui-nav-more"></em> </a>
+                                <a href="javascript:;" data-title="权限管理"> <i class="iconfont">&#xe609;</i> <span>权限管理</span>
+                                    <em class="layui-nav-more"></em> </a>
                                 <dl class="layui-nav-child">
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="角色管理"> <i class="iconfont" data-icon="&#xe608;">&#xe608;</i> <span>角色管理</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="角色管理"> <i class="iconfont"
+                                                data-icon="&#xe608;">&#xe608;</i> <span>角色管理</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="权限设置"> <i class="iconfont" data-icon="&#xe668;">&#xe668;</i> <span>权限设置</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="权限设置"> <i class="iconfont"
+                                                data-icon="&#xe668;">&#xe668;</i> <span>权限设置</span> </a>
                                     </dd>
                                     <dd>
-                                        <a href="javascript:;"data-url="" data-title="管理员"> <i class="iconfont" data-icon="&#xe672;">&#xe672;</i> <span>管理员</span> </a>
+                                        <a href="javascript:;" data-url="" data-title="管理员"> <i class="iconfont"
+                                                data-icon="&#xe672;">&#xe672;</i> <span>管理员</span> </a>
                                     </dd>
                                 </dl>
                             </li>
