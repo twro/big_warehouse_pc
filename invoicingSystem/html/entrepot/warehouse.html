@@ -47,19 +47,19 @@
                             <div class="layui-inline" style="margin-left:20px;">
                                 <label for="">仓库编号：</label>
                                 <div class="layui-input-inline">
-                                    <input class="layui-input" name="keyword" placeholder=""  autocomplete="off">
+                                    <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                                 </div>
                             </div>
                             <div class="layui-inline" style="margin-left:20px;">
                                 <label for="">外部编号：</label>
                                 <div class="layui-input-inline">
-                                    <input class="layui-input" name="keyword" placeholder=""  autocomplete="off">
+                                    <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                                 </div>
                             </div>
                             <div class="layui-inline" style="margin-left:20px;">
                                 <label for="">仓库名称：</label>
                                 <div class="layui-input-inline">
-                                    <input class="layui-input" name="keyword" placeholder=""  autocomplete="off">
+                                    <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                                 </div>
                             </div>
                             <div class="layui-inline">
@@ -376,6 +376,9 @@
             icon: 3,
             title: '提示'
         }, function (index) {
+            if ($('.layui-unselect.header.layui-form-checkbox').hasClass("layui-form-checked")) {
+                $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked")
+            }
             $(arg).parent().parent().siblings().find("tbody .layui-form-checked").parent().parent().remove();
             layer.close(index)
         })
@@ -388,6 +391,10 @@
                 icon: 2,
                 time: 2000 //2秒关闭（如果不配置，默认是3秒）
             }, function () {
+                console.log($('.layui-unselect.header.layui-form-checkbox').hasClass("layui-form-checked"))
+                if ($('.layui-unselect.header.layui-form-checkbox').hasClass("layui-form-checked")) {
+                    $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked")
+                }
                 $(arg).parent().parent().siblings().find("tbody .layui-unselect.layui-form-checkbox").removeClass(
                     "layui-form-checked")
                 return false;
