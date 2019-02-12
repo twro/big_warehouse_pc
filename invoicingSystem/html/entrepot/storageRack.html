@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>仓库设置</title>
+    <title>货架设置</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,14 +15,14 @@
     <link rel="stylesheet" type="text/css" href="../../js/layui/css/layui.css?v=2.2.2" media="all">
     <link rel="stylesheet" type="text/css" href="../../css/main.css?v2.0.1-simple" media="all">
     <style>
-        .layui-form.pro{ overflow-y: hidden;overflow-x: scroll;margin-bottom: 10px;}
+        /* .layui-form.pro{ overflow-y: hidden;overflow-x: scroll;margin-bottom: 10px;}
         .layui-form.pro .scrollBox{
             width: 150%;
             overflow: hidden;
-        }
-        .layui-input,
+        } */
+        #add_subdata .layui-input,
             .layui-textarea {
-                width: 212px;
+                width: 260px;
             }
     </style>
 </head>
@@ -76,7 +76,7 @@
                             <form action="" class="layui-form">
                                 <div class="layui-form ">
                                     <div class="layui-inline">
-                                        <label for="">地区名称：</label>
+                                        <label for="">仓库名称：</label>
                                         <div class="layui-input-inline">
                                             <div class="layui-input-inline">
                                                 <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
@@ -103,17 +103,9 @@
                                                     <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i
                                                             class="layui-icon"></i></div>
                                                 </th>
-                                                <th>外部编号</th>
-                                                <th>仓库编码</th>
-                                                <th>仓库名称</th>
-                                                <th>结算币种</th>
-                                                <th>省</th>
-                                                <th>市</th>
-                                                <th>区</th>
-                                                <th>寄件详细地址</th>
-                                                <th>联系电话</th>
-                                                <th>寄件人身份证</th>
-                                                <th>寄件人姓名</th>
+                                                <th>货架号</th>
+                                                <th>货架容积</th>
+                                                <th>货架类型</th>
                                                 <th>是否可用</th>
                                                 <th>创建人</th>
                                                 <th>创建时间</th>
@@ -135,14 +127,6 @@
                                                 <td>7</td>
                                                 <td>8</td>
                                                 <td>9</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                                <td>7</td>
-                                                <td>8</td>
-                                                <td>9</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -150,14 +134,6 @@
                                                         data-id="2"><i class="layui-icon"></i></div>
                                                 </td>
                                                 <td>w</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                                <td>7</td>
-                                                <td>8</td>
-                                                <td>9</td>
-                                                <td>2</td>
                                                 <td>3</td>
                                                 <td>4</td>
                                                 <td>5</td>
@@ -193,55 +169,7 @@
             <form class="layui-form " action="">
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label>所属地区：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-inline" style="margin-left:20px;">
-                        <label for="">仓库名称：</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label for="">外部编码：</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="layui-inline" style="margin-left:20px;">
-                        <label for="">仓库编码：</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label>结算币种：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-inline" style="margin-left:20px;">
-                        <label>&nbsp;&nbsp;&nbsp;省&nbsp;&nbsp;&nbsp;&nbsp;份：</label>
+                        <label>所属库区：</label>
                         <div class="layui-input-inline">
                             <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
                                 <option value=""></option>
@@ -256,20 +184,7 @@
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label>&nbsp;&nbsp;&nbsp;&nbsp市&nbsp;&nbsp;&nbsp区：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="layui-inline" style="margin-left:20px;">
-                        <label>&nbsp;&nbsp;&nbsp;区&nbsp;&nbsp;&nbsp;&nbsp;县：</label>
+                        <label>库区类型：</label>
                         <div class="layui-input-inline">
                             <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
                                 <option value=""></option>
@@ -284,21 +199,7 @@
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label for="">详细地址：</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" style="width:520px;" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label for="">寄件姓名：</label>
-                        <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="layui-inline" style="margin-left:20px;">
-                        <label for="">联系电话：</label>
+                        <label for="">库区别名：</label>
                         <div class="layui-input-inline">
                             <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                         </div>
@@ -306,10 +207,19 @@
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label for="">寄件人身份证号码：</label>
+                        <label for="">创建数量：</label>
                         <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" style="width:300px;" maxlength="18"
-                                autocomplete="off">
+                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="font-size:12px; float: none;display: inline-block;margin-left: 77px;">一次可创建50个,最多可创建999个</div>
+                    </div>
+                </div>
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label for="">是否启用：</label>
+                        <div class="layui-input-inline">
+                            <input type="radio" name="selectedRadio" value="1" title="是" checked="">
+                            <input type="radio" name="selectedRadio" value="0" title="否">
                         </div>
                     </div>
                 </div>
@@ -357,7 +267,7 @@
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['680px', '510px']
+            area: ['400px', '460px']
         })
     }
 
@@ -366,7 +276,7 @@
         if (select.length == 0) {
             layer.msg('请先选择想要删除的项目', {
                 icon: 2,
-                time: 2000 
+                time: 2000
             }, function () {
                 return false;
             });
@@ -408,7 +318,7 @@
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['680px', '510'],
+            area: ['400px', '460px'],
             success: function () {
                 var id = $(arg).parent().parent().siblings().find("tbody .layui-form-checked").attr(
                     'data-id')
