@@ -27,6 +27,11 @@
             .layui-textarea{
                 resize: none;
             }
+        #add_subdata label{
+            width: 112px;
+            display: inline-block;
+            text-align: right;
+        }
     </style>
 </head>
 
@@ -176,7 +181,7 @@
             <form class="layui-form " action="">
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label>所属仓库：</label>
+                        <label>货主编码：</label>
                         <div class="layui-input-inline">
                             <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
                                 <option value=""></option>
@@ -191,88 +196,48 @@
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label>&nbsp;&nbsp;&nbsp;库&nbsp;&nbsp;&nbsp;&nbsp;区：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label>&nbsp;&nbsp;&nbsp;货&nbsp;&nbsp;&nbsp;&nbsp;架：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label>货位类型：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label>货架类型：</label>
-                        <div class="layui-input-inline">
-                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-form-pane">
-                    <div class="layui-inline">
-                        <label for="">创建数量：</label>
+                        <label for="">寄件人：</label>
                         <div class="layui-input-inline">
                             <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                         </div>
-                        <div class="layui-form-mid layui-word-aux" style="font-size:12px; float: none;display: inline-block;margin-left: 77px;">一次可创建50个,最多可创建999个</div>
                     </div>
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label for="">是否启用：</label>
-                        <div class="layui-input-inline" style="margin-left:-12px;">
-                            <input type="radio" name="selectedRadio" value="1" title="是" checked="">
-                            <input type="radio" name="selectedRadio" value="0" title="否">
+                        <label for="">寄件人身份证号：</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off" maxlength="18">
                         </div>
                     </div>
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label for="">货位说明：</label>
+                        <label for="">联系电话：</label>
                         <div class="layui-input-inline">
-                            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off" maxlength="11">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label>省市区：</label>
+                        <div class="layui-input-inline">
+                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label for="">寄件详细地址：</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -314,18 +279,18 @@
     function addOpen(arg) {
         layer.open({
             type: 1,
-            title: "添加/修改货架信息",
+            title: "添加/修改发货地址信息",
             content: $("#add_subdata"),
             closeBtn: "1",
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '650px'],
+            area: ['500px', '500px'],
             success: function () {
                 // 按钮点击操作在这里完成
             }
         })
-    }
+    };
 
     function delRow(arg) {
         var select = $(arg).parent().parent().siblings().find("tbody .layui-form-checked");
@@ -343,12 +308,12 @@
             title: '提示'
         }, function (index) {
             if ($('.layui-unselect.header.layui-form-checkbox').hasClass("layui-form-checked")) {
-                $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked")
+                $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked");
             }
             $(arg).parent().parent().siblings().find("tbody .layui-form-checked").parent().parent().remove();
-            layer.close(index)
+            layer.close(index);
         })
-    }
+    };
 
     function editData(arg) {
         var select = $(arg).parent().parent().siblings().find("tbody .layui-form-checked");
@@ -358,30 +323,30 @@
                 time: 2000
             }, function () {
                 if ($('.layui-unselect.header.layui-form-checkbox').hasClass("layui-form-checked")) {
-                    $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked")
-                }
+                    $('.layui-unselect.header.layui-form-checkbox').removeClass("layui-form-checked");
+                };
                 $(arg).parent().parent().siblings().find("tbody .layui-unselect.layui-form-checkbox").removeClass(
-                    "layui-form-checked")
+                    "layui-form-checked");
                 return false;
             });
             return false;
         };
         layer.open({
             type: 1,
-            title: "添加/修改货架信息",
+            title: "添加/修改发货地址信息",
             content: $("#add_subdata"),
             closeBtn: "1",
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '650px'],
+            area: ['500px', '500px'],
             success: function () {
                 var id = $(arg).parent().parent().siblings().find("tbody .layui-form-checked").attr(
-                    'data-id')
-                console.log(id)
+                    'data-id');
+                console.log(id);
             }
         })
-    }
+    };
 </script>
 
 </html>
