@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>货架设置</title>
+    <title>货区设置</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -23,6 +23,9 @@
         #add_subdata .layui-input,
             .layui-textarea {
                 width: 250px;
+            }
+            .layui-textarea{
+                resize: none;
             }
     </style>
 </head>
@@ -92,6 +95,21 @@
                                     </div>
                                     <div class="layui-inline" style="margin-top:20px;">
                                         <label for="">库区设置：</label>
+                                        <div class="layui-input-inline">
+                                            <div class="layui-input-inline">
+                                                <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
+                                                    <option value=""></option>
+                                                    <option value="0">北京</option>
+                                                    <option value="1">上海</option>
+                                                    <option value="2">广州</option>
+                                                    <option value="3">深圳</option>
+                                                    <option value="4">杭州</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline" style="margin-top:20px;">
+                                        <label for="">货架设置：</label>
                                         <div class="layui-input-inline">
                                             <div class="layui-input-inline">
                                                 <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
@@ -212,9 +230,32 @@
                 </div>
                 <div class="layui-form-pane">
                     <div class="layui-inline">
-                        <label for="">货架容积：</label>
+                        <label>&nbsp;&nbsp;&nbsp;货&nbsp;&nbsp;&nbsp;&nbsp;架：</label>
                         <div class="layui-input-inline">
-                            <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
+                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label>货位类型：</label>
+                        <div class="layui-input-inline">
+                            <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
+                                <option value=""></option>
+                                <option value="0">北京</option>
+                                <option value="1">上海</option>
+                                <option value="2">广州</option>
+                                <option value="3">深圳</option>
+                                <option value="4">杭州</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -245,9 +286,17 @@
                 <div class="layui-form-pane">
                     <div class="layui-inline">
                         <label for="">是否启用：</label>
-                        <div class="layui-input-inline">
+                        <div class="layui-input-inline" style="margin-left:-12px;">
                             <input type="radio" name="selectedRadio" value="1" title="是" checked="">
                             <input type="radio" name="selectedRadio" value="0" title="否">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-pane">
+                    <div class="layui-inline">
+                        <label for="">货位说明：</label>
+                        <div class="layui-input-inline">
+                            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
                         </div>
                     </div>
                 </div>
@@ -295,8 +344,8 @@
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '500px'],
-            success:function(){
+            area: ['400px', '650px'],
+            success: function () {
                 // 按钮点击操作在这里完成
             }
         })
@@ -349,7 +398,7 @@
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '500px'],
+            area: ['400px', '650px'],
             success: function () {
                 var id = $(arg).parent().parent().siblings().find("tbody .layui-form-checked").attr(
                     'data-id')
