@@ -335,10 +335,10 @@ a:hover {
     background-color: #ccc;
 }
 
-.layui-form-radioed i,
+/* .layui-form-radioed i,
 .layui-form-radio i:hover {
     color: #DDD;
-}
+} */
 
 /* .layui-input,
 .layui-textarea {
