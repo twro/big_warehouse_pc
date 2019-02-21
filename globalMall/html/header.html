@@ -10,7 +10,7 @@
 <div class="head">
     <div class="wrap clearfix">
         <div class="head-left clearfix">
-            <p class="city-txt">深圳市认</p>
+            <p class="city-txt">深圳市</p>
             <span class="sel-icon"></span>
         </div>
         <div class="head-right">
@@ -240,10 +240,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
        $(".nav-box").hover(function(){
-        $(".two-nav").slideDown(200);
+        $(".two-nav").stop().slideDown(200);
         },
         function(){
-            $(".two-nav").slideUp(200);
+            $(".two-nav").stop().slideUp(200);
         });
 
         $(".two-nav>li").hover(function(){
@@ -255,4 +255,3 @@
      });
 
 </script>
-</html>
