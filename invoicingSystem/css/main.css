@@ -117,8 +117,8 @@ textarea::-moz-placeholder {
 }
 
 body {
-    /*background: #f2f2f2;*/
-    /*color: #999;*/
+    background: #f2f2f2;
+    color: #999;
 }
 
 .layui-elem-quote {

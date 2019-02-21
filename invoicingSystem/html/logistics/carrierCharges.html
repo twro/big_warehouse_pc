@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>承运方式</title>
+    <title>承运资费</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -42,11 +42,11 @@
                                         class="layui-icon">&#xe654;</i>
                                     添加</button>
                             </div>
-                            <!-- <div class="layui-inline" style="margin-left:20px;">
-                                <button lay-submit class="layui-btn layui-btn-primary" type="button">API授权</button>
-                            </div> -->
                             <div class="layui-inline" style="margin-left:20px;">
-                                <label>类别：</label>
+                                <button lay-submit class="layui-btn layui-btn-primary" type="button">导入</button>
+                            </div>
+                            <div class="layui-inline" style="margin-left:20px;">
+                                <label>承运商：</label>
                                 <div class="layui-input-inline">
                                     <select name="city" jq-verify="required" jq-error="请选择地区" lay-filter="verify">
                                         <option value=""></option>
@@ -59,7 +59,13 @@
                                 </div>
                             </div>
                             <div class="layui-inline" style="margin-left:20px;">
-                                <label for="">物流名称：</label>
+                                <label for="">资费名称：</label>
+                                <div class="layui-input-inline">
+                                    <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="layui-inline" style="margin-left:20px;">
+                                <label for="">资费编码：</label>
                                 <div class="layui-input-inline">
                                     <input class="layui-input" name="keyword" placeholder="" autocomplete="off">
                                 </div>
@@ -84,8 +90,9 @@
                                                     <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i
                                                             class="layui-icon"></i></div>
                                                 </th>
-                                                <th>代码</th>
-                                                <th>名称</th>
+                                                <th>运费公式名称</th>
+                                                <th>结算货币</th>
+                                                <th>适用仓库</th>
                                                 <th>备注</th>
                                                 <th>是否可用</th>
                                                 <th>创建人</th>
@@ -108,6 +115,7 @@
                                                 <td>7</td>
                                                 <td>8</td>
                                                 <td>9</td>
+                                                <td>10</td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -122,6 +130,7 @@
                                                 <td>7</td>
                                                 <td>8</td>
                                                 <td>9</td>
+                                                <td>10</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -145,7 +154,7 @@
             </div>
         </div>
     </div>
-    <div class="add_subdata layui-fluid larry-wrapper" id="add_subdata">
+    <!-- <div class="add_subdata layui-fluid larry-wrapper" id="add_subdata">
         <div class=" panel panel-padding layui-col-xs24">
             <form class="layui-form " action="">
                 <div class="layui-form-pane">
@@ -179,7 +188,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 </body>
 
 <script src="../../js/layui/layui.js"></script>
@@ -208,14 +217,14 @@
 
     function addOpen(arg) {
         layer.open({
-            type: 1,
+            type: 2,
             title: "添加/修改承运商API信息",
-            content: $("#add_subdata"),
+            content: "./carrierChargesAddOrEdit.html",
             closeBtn: "1",
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '350px']
+            area: ['800px', '100%']
         })
     }
 
@@ -259,14 +268,14 @@
             return false;
         };
         layer.open({
-            type: 1,
+            type: 2,
             title: "添加/添加/修改承运商API信息",
-            content: $("#add_subdata"),
+            content: "./carrierChargesAddOrEdit.html",
             closeBtn: "1",
             shade: .3,
             shadeClose: true,
             scrollbar: true,
-            area: ['400px', '350px'],
+            area: ['800px', '100%'],
             success: function () {
                 var id = $(arg).parent().parent().siblings().find("tbody .layui-form-checked").attr(
                     'data-id')
