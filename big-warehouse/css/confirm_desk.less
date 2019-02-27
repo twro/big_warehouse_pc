@@ -1,0 +1,70 @@
+.desk-time{
+	li{
+		display:inline-block;
+		font-size: 34/100rem;
+		letter-spacing: 2/100rem;
+		color: #f5174a;
+	}
+}
+.desk-warn{
+	height: 100/100rem;
+	background-color: #fef8d7;
+	.desk-pay{
+		margin:34/100rem 0 0 30/100rem;
+		font-size: 30/100rem;
+		color: #222222;
+		float: left;
+	}
+	.desk-pay-num{
+		margin:30/100rem 0 0 0;
+		float: left;
+		font-size: 36/100rem;
+		color: #f5174a;
+	}
+}
+
+.pay-way{
+	background-color: #fff;
+	p{
+		padding:37/100rem 0 39/100rem 30/100rem;
+		font-size: 30/100rem;
+		color: #222222;
+	}
+	margin-bottom:20/100rem;
+}
+.desk-wrap{
+	.pay-wechat{
+		margin-right:33/100rem;
+		width: 80/100rem;
+		height: 80/100rem;
+		display: block;
+		background-image: url("../images/wechat.icon.png");
+		-webkit-background-size: cover;
+		background-size:cover;
+	}
+	.cell-item{
+      &:nth-child(2){
+		  .pay-wechat{
+			  background-image: url("../images/zfb.png");
+		  }
+	  }
+	}
+	.cell-right input[type="checkbox"]:not(.m-switch):checked+.cell-checkbox-icon:after {
+		color: #f5174a;
+		content: '\e601';
+	}
+
+}
+
+.pay-money{
+	line-height: 88/100rem;
+	text-align: center;
+	width: 400/100rem;
+	height: 88/100rem;
+	background-color: #f5174a;
+	border-radius: 5/100rem;
+	margin:210/100rem auto 0;
+	font-size: 32/100rem;
+	letter-spacing: 1/100rem;
+	color: #ffffff;
+}

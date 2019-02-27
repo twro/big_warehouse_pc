@@ -1,0 +1,91 @@
+.pwd-cell{
+	margin:0;
+	.cell-left{
+		color: #3c3c3c;
+		font-size: 28/100rem;
+	}
+}
+
+.check-switch {
+	// 清除原有样式
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	// 清除元素外边款轮廓线
+	outline: none;
+	// 设置具备区块元素属性
+	display: inline-block;
+	// 按钮设置为手型
+	cursor:pointer;
+	// 设置宽度
+	width: 102/100rem;
+	// 设置高度
+	height: 60/100rem;
+	position: relative;
+	// 边框
+	border: 1px solid #dfdfdf;
+	// 背景
+	background-color: #fdfdfd;
+	// 设置阴影效果
+	box-shadow: #dfdfdf 0 0 0 0 inset;
+	// 圆角
+	border-radius: 50/100rem;
+	// 设置背景的绘制区域
+	background-clip: content-box;
+}
+// 中间圆圈样式
+.check-switch:before {
+	// content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。
+	// 此元素值为'' ,但是必须存在，否则将不显示中间那个圆圈
+	content: '';
+	width: 56/100rem;
+	height: 56/100rem;
+	// 脱离文档流
+	position: absolute;
+	// 设置位置
+	top: 0;
+	left: 0;
+	// 圆角
+	border-radius: 50%;
+	// 颜色
+	background-color: #fff;
+	// 阴影效果
+	box-shadow: 0 1/100rem 3/100rem rgba(0, 0, 0, 0.4);
+}
+//checkbox元素被选中时的样式
+.check-switch:checked {
+	// 边框颜色
+	border-color:  #78d471;
+	// 选中后的阴影效果
+	box-shadow:  #78d471 0 0 0 16/100rem inset;
+	// 选中后的北京色
+	background-color:  #78d471;
+}
+// 在checkbox选中后，中间圆圈的便宜位置
+.check-switch:checked:before {
+	left: 42/100rem;
+}
+// 增加动画效果
+.check-switch-anim {
+	transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s;
+}
+.check-switch-anim:before {
+	transition: left 0.3s;
+}
+.check-switch-anim:checked {
+	box-shadow:  #78d471 0 0 0 16/100rem inset;
+	background-color:  #78d471;
+	transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 0.6s;
+}
+.check-switch-anim:checked:before {
+	transition: left 0.3s;
+}
+.cell-item{
+	display: flex;
+	justify-content: space-between;
+}
+.pwd-right{
+
+}
+.pwd-item{
+	padding:20/100rem 24/100rem;
+}
