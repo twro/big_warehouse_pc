@@ -42,6 +42,12 @@
                                 <div class="billing-right billing-wrait">提现申请中请耐心等候</div>
                             </div>
                         </li>
+                        <li class="billing-li" v-if="status">
+                            <div class="billing-inner">
+                                <div class="billing-left">失败原因</div>
+                                <div class="billing-right">提现超额</div>
+                            </div>
+                        </li>
                         <li class="billing-li">
                             <div class="billing-inner">
                                 <div class="billing-left">提现金额</div>
@@ -60,7 +66,7 @@
                                 <div class="billing-right">2018-11-11 12:00:00</div>
                             </div>
                         </li>
-                        <li class="billing-li">
+                        <li class="billing-li" v-if="!status">
                             <div class="billing-inner">
                                 <div class="billing-left">到账时间</div>
                                 <div class="billing-right">2018-11-14 12:00:00</div>
@@ -110,7 +116,8 @@
             el: "#billingDetails",
             data() {
                 return {
-                    num: 0
+                    num: 0,
+                    status:false
                 }
             },
             created: function () {
