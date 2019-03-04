@@ -869,7 +869,7 @@ html {
 .mine-bg {
   position: relative;
   width: 7.5rem;
-  height: 4.81rem;
+  height: 3.5rem;
   background-image: url("../images/bg2.png");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -881,11 +881,11 @@ html {
   padding-bottom: 0.3rem;
   background-color: #ffffff;
   border-radius: 0.2rem;
-  -webkit-transform: translate(0.3rem, -1.4rem);
-  -moz-transform: translate(0.3rem, -1.4rem);
-  -ms-transform: translate(0.3rem, -1.4rem);
-  -o-transform: translate(0.3rem, -1.4rem);
-  transform: translate(0.3rem, -1.4rem);
+  -webkit-transform: translate(0.3rem, -0.5rem);
+  -moz-transform: translate(0.3rem, -0.5rem);
+  -ms-transform: translate(0.3rem, -0.5rem);
+  -o-transform: translate(0.3rem, -0.5rem);
+  transform: translate(0.3rem, -0.5rem);
 }
 .head-icon {
   position: absolute;
@@ -967,17 +967,6 @@ html {
   background-repeat: no-repeat;
   -webkit-background-size: 7.5rem;
   background-size: 7.5rem;
-}
-.mine-balance {
-  font-size: 0.3rem;
-  letter-spacing: 2px;
-  color: #ffffff;
-  position: absolute;
-  left: 0.3rem;
-  bottom: 1.6rem;
-}
-.mine-balance span {
-  margin-right: 30px;
 }
 .mine-top {
   margin: 0 0.24rem 0 0.24rem;
@@ -1104,26 +1093,6 @@ html {
   height: 0.4rem;
   background-image: url("../images/bg.png");
   background-position: -3.55rem -2.83rem;
-}
-.wrap-tool .mine-tool:nth-child(7) {
-  margin-left: 0.7rem;
-}
-.wrap-tool .mine-tool:nth-child(7) span {
-  margin: 0.36rem auto 0.26rem;
-  width: 0.4rem;
-  height: 0.4rem;
-  background-image: url("../images/bg.png");
-  background-position: -4.07rem -2.3rem;
-}
-.wrap-tool .mine-tool:nth-child(8) {
-  margin-left: 0.7rem;
-}
-.wrap-tool .mine-tool:nth-child(8) span {
-  margin: 0.36rem auto 0.26rem;
-  width: 0.42rem;
-  height: 0.4rem;
-  background-image: url("../images/bg.png");
-  background-position: -4.07rem -2.85rem;
 }
 .wrap-server {
   height: 2.9rem;
@@ -1450,10 +1419,6 @@ html {
 }
 .desk-wrap .cell-item:nth-child(2) .pay-wechat {
   background-image: url("../images/zfb.png");
-}
-
-.desk-wrap .cell-item:nth-child(3) .pay-wechat{
-  background-image: url(../images/ye.png);
 }
 .desk-wrap .cell-right input[type="checkbox"]:not(.m-switch):checked + .cell-checkbox-icon:after {
   color: #f5174a;
@@ -2728,6 +2693,3 @@ html {
 .edit-inp li:last-child {
   border-right: 1px solid #dbdbdb;
 }
-/*# sourceMappingURL=style.css.map */
-
-
