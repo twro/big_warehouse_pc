@@ -10,6 +10,19 @@
     <!-- 页面样式 -->
     <!-- <link rel="stylesheet" href="../../css/idCardPassCertification.min.css"> -->
     <link rel="stylesheet" href="../../css/keeper.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/keeper.css">
+    <style>
+        .m-navbar .head-caption {
+            font-size: 0.34rem;
+            letter-spacing: 0.02rem;
+            color: #222222;
+        }
+
+        .dialog-server {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,12 +74,29 @@
                 <div class="m-cell">
                     <div class="cell-item">
                         <div class="cell-left">提现方式</div>
-                        <div class="cell-right cell-arrow color-ec">未绑定</div>
+                        <div class="cell-right cell-arrow color-ec" @click="typeShow=!typeShow">未绑定</div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="dialog-server" v-show="typeShow">
+            <div class="dialog-box">
+                <i class="close_i" @click="typeShow=!typeShow"></i>
+                <p class="cash_title">选择提现方式</p>
+                <a href="bindBank.html" class="cashType">
+                    <p class="cashType_txt"><i class="cashType_img "></i>银行卡</p>
+                    <span class="type_check"></span>
+                </a>
+                <a href="bindWx.html" class="cashType">
+                    <p class="cashType_txt"><i class="cashType_img cash_wx"></i>微信</p>
+                    <span class="type_check"></span>
+                </a>
+                <a href="bindZfb.html" class="cashType">
+                    <p class="cashType_txt"><i class="cashType_img cash_zfb"></i>支付宝</p>
+                    <span class="type_check"></span>
+                </a>
+            </div>
+        </div>
         <!-- <footer class="m-tabbar">
             <a href="#" class="tabbar-item tabbar-active">
                 <span class="nav-icon"></span>
@@ -94,7 +124,8 @@
             el: "#idCardPassCertification",
             data() {
                 return {
-                    num: 0
+                    num: 0,
+                    typeShow: false
                 }
             },
             created: function () {
