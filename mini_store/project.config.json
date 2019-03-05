@@ -42,8 +42,9 @@
 				{
 					"id": 0,
 					"name": "单页模式",
-					"pathName": "pages/mYorder/mYorder",
-					"query": "gistice"
+					"pathName": "pages/classify/classify",
+					"query": "gistice",
+					"scene": null
 				}
 			]
 		}

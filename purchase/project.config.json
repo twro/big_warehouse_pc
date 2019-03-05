@@ -42,8 +42,9 @@
 				{
 					"id": 0,
 					"name": "单页面编译",
-					"pathName": "pages/brandlist/brandlist",
-					"query": ""
+					"pathName": "pages/shopDetail/shopDetail",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

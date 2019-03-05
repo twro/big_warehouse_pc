@@ -3,7 +3,7 @@
     <view class="inner">
         <view class="left" style="height:{{leftHeight}}px">
             <scroll-view scroll-x="false" scroll-y="{{true}}" scroll-left="{{0}}" style="height:{{leftHeight}}px">
-                <view class="left-tab {{idx == 0?'in':''}}" wx:for="{{10}}" wx:for-index="idx" data-idx="{{idx}}" wx:key="idx" bindtap='getDataList'>
+                <view class="left-tab {{idx == 0?'in':''}}" wx:for="{{20}}" wx:for-index="idx" data-idx="{{idx}}" wx:key="idx" bindtap='getDataList'>
                     {{item}}
                 </view>
             </scroll-view>
@@ -20,7 +20,7 @@
                             <view class="text">{{(dataList[0].li)+1}}</view>
                         </view>
                         <view class="list">
-                            <navigator url="/pages/classifyList/classifyList?id={{item}}" wx:for="{{6}}" wx:for-index="idx" data-idx="idx" wx:index="idx" wx:key="idx">
+                            <navigator url="/pages/classifyList/classifyList?id={{item}}" wx:for="{{18}}" wx:for-index="idx" data-idx="idx" wx:index="idx" wx:key="idx">
                                 <view class="list-pic">
                                     <image src="../../images/classify_goods.png" class="classifyGoods" />
                                     <view class="tit">美素佳儿{{idx}}</view>
@@ -34,7 +34,7 @@
                             <view class="text">{{(dataList[0].li)+1}}</view>
                         </view>
                         <view class="list">
-                            <navigator url="/pages/classifyList/classifyList?id={{item}}" wx:for="{{6}}" wx:for-index="idx" data-idx="idx" wx:index="idx" wx:key="idx">
+                            <navigator url="/pages/classifyList/classifyList?id={{item}}" wx:for="{{18}}" wx:for-index="idx" data-idx="idx" wx:index="idx" wx:key="idx">
                                 <view class="list-pic">
                                     <image src="../../images/classify_goods.png" class="classifyGoods" />
                                     <view class="tit">美素佳儿{{idx}}</view>

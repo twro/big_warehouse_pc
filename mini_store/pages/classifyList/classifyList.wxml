@@ -8,7 +8,7 @@
     </view>
     <view class="list-box">
       <view class="list-types">
-        <view class="types {{tabIdx==idx?'in':''}}" wx:for="{{4}}" wx:for-index="idx" data-idx="{{idx}}" wx:key="idx" bindtap='tabChange'>综合</view>
+        <view class="types {{tabIdx==idx?'in':''}}" wx:for="{{10}}" wx:for-index="idx" data-idx="{{idx}}" wx:key="idx" bindtap='tabChange'>综合</view>
       </view>
       <scroll-view class="list-wrapper" scroll-y="{{true}}" style="height:{{leftHeight}}px" bindscrolltolower="loadMoreData">
         <view class="list-ul">
