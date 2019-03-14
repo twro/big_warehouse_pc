@@ -1,37 +1,31 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <transition name="fade">
       <router-view></router-view>
-    </keep-alive>
-    <yd-tabbar :fixed=true v-if="$route.meta.fhide">
-      <yd-tabbar-item title="首页" link="#">
-        <yd-icon name="home" slot="icon" size="0.3rem"></yd-icon>
-      </yd-tabbar-item>
-      <yd-tabbar-item title="购物车" link="#">
-        <yd-icon name="shopcart-outline" slot="icon" size="0.3rem"></yd-icon>
-      </yd-tabbar-item>
-      <yd-tabbar-item title="个人中心" link="#">
-        <yd-icon name="ucenter-outline" slot="icon" size="0.3rem"></yd-icon>
-      </yd-tabbar-item>
-      <yd-tabbar-item title="图片" link="#">
-        <img slot="icon" style="height: 25px;" src="http://static.ydcss.com/ydui/img/logo.png">
-      </yd-tabbar-item>
-    </yd-tabbar>
+    </transition>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-import { TabBar, TabBarItem } from "vue-ydui/dist/lib.rem/tabbar";
-import { Icons } from "vue-ydui/dist/lib.rem/icons";
-Vue.component(TabBar.name, TabBar);
-Vue.component(TabBarItem.name, TabBarItem);
-
-/* 使用px：import {Icons} from 'vue-ydui/dist/lib.px/icons'; */
-
-Vue.component(Icons.name, Icons);
 export default {
-  name: "app"
+  name: "app",
+  data() {
+    return {
+      transitionName: ""
+    };
+  },
+  watch: {
+    //使用watch 监听$router的变化
+    $route(to, from) {
+      //如果to索引大于from索引,判断为前进状态,反之则为后退状态
+      if (to.meta.index > from.meta.index) {
+        //设置动画名称
+        this.transitionName = "slide-left";
+      } else {
+        this.transitionName = "slide-right";
+      }
+    }
+  }
 };
 </script>
 
@@ -56,12 +50,13 @@ html {
   // visibility: hidden;
 }
 /*#app {*/
-  /*height: 100%;*/
+/*height: 100%;*/
 /*}*/
-  input,button{
-    outline: none;
-    border: none;
-  }
+input,
+button {
+  outline: none;
+  border: none;
+}
 
 /* 颜色 */
 
@@ -98,10 +93,10 @@ html {
 .f16 {
   font-size: 16px;
 }
-.f20{
-  font-size:20px;
+.f20 {
+  font-size: 20px;
 }
-.fbold{
+.fbold {
   font-weight: bold;
 }
 
@@ -145,7 +140,7 @@ html {
 }
 
 page {
-  font-family: 'Microsoft Yahei';
+  font-family: "Microsoft Yahei";
   font-size: 28/100rem;
   color: #666;
 }
@@ -177,7 +172,6 @@ page {
 }
 
 .bdr::after {
-
   /* 2.1.通过伪元素绘制一像素的右边框 */
   content: "";
   width: 1px;
@@ -190,11 +184,43 @@ page {
 }
 
 /* 左右居中对齐 */
-.center{
+.center {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+  will-change: transform;
+  transition: all 500ms;
+  // position: absolute;
+}
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.1s;
+}
+.fade-enter,
+.fade-leave {
+  opacity: 0;
+}
 </style>
