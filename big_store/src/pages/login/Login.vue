@@ -25,16 +25,14 @@ export default {
   name: "Login",
   data() {
     return {
-      name:"",
-      verifyCode:"",
-    }
+      name: "",
+      verifyCode: ""
+    };
   },
-  mounted () {
-    
-  },
+  mounted() {},
   methods: {
-    loginIn(){
-      this.$router.push('/index')
+    loginIn() {
+      this.$router.push("/index");
     }
   }
 };

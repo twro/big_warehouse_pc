@@ -46,7 +46,7 @@
       </div>
       <div class="actives-list">
         <ul class="actives-list-ul">
-          <li class="actives-list-li">
+          <li class="actives-list-li" v-for="(item, index) in 3" :key="index">
             <router-link to>
               <div class="actives-list-inner">
                 <div class="actives-list-pic">
@@ -61,33 +61,149 @@
                   </div>
                   <div class="actives-list-title">【保税】新西兰爱他美Aptamil婴幼儿奶粉1段(0-6个月)</div>
                   <div class="new-price-old-pride">
-                    <span class="new-price">￥200.00</span>
-                    <del>￥100.00</del>
+                    <span class="new-price">￥200.00起</span>
+                    <del class="old-price">￥100.00</del>
                   </div>
                 </div>
               </div>
             </router-link>
           </li>
         </ul>
+        <div class="see-all">
+          <router-link to class="bgColr">
+            <span class="see-more">查看更多</span>
+            <span class="see-icon"></span>
+          </router-link>
+        </div>
+      </div>
+    </div>
+    <div class="edge"></div>
+    <div class="today-box">
+      <div class="tabsWrapper">
+        <div class="tabs-inner">
+          <div class="tab-wrap">
+            <div class="tab-content">
+              <div class="scrollable" ref="tabDiv">
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 0?'active':''"
+                  @click.stop="tabClick(0)"
+                >栏目1</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 1?'active':''"
+                  @click.stop="tabClick(1)"
+                >栏目2</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 2?'active':''"
+                  @click.stop="tabClick(2)"
+                >栏目3</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 3?'active':''"
+                  @click.stop="tabClick(3)"
+                >栏目4</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 4?'active':''"
+                  @click.stop="tabClick(4)"
+                >栏目5</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 5?'active':''"
+                  @click.stop="tabClick(5)"
+                >栏目6</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 6?'active':''"
+                  @click.stop="tabClick(6)"
+                >栏目7</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 7?'active':''"
+                  @click.stop="tabClick(7)"
+                >栏目8</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 8?'active':''"
+                  @click.stop="tabClick(8)"
+                >栏目9</span>
+                <span
+                  class="tabs-item"
+                  :class="tabIndex == 9?'active':''"
+                  @click.stop="tabClick(9)"
+                >栏目10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="today-content">
+        <swiper
+          style="height: 30%;"
+          :options="swiperOption"
+          ref="mySwiper"
+          @slideChange="slideChange"
+        >
+          <swiper-slide style="height:20%;">
+            <tablist></tablist>
+          </swiper-slide>
+          <swiper-slide>2</swiper-slide>
+          <swiper-slide>3</swiper-slide>
+          <swiper-slide>4</swiper-slide>
+          <swiper-slide>5</swiper-slide>
+          <swiper-slide>6</swiper-slide>
+          <swiper-slide>7</swiper-slide>
+          <swiper-slide>8</swiper-slide>
+          <swiper-slide>9</swiper-slide>
+          <swiper-slide>10</swiper-slide>
+        </swiper>
       </div>
     </div>
   </div>
 </template>
 <script>
+import "swiper/dist/css/swiper.css";
 import indexSwiper from "@/components/indexSwiper/IndexSwiper";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
+import tabsSwiper from "@/components/tabSwiper/tabSwiper";
 export default {
   name: "index",
   data() {
     return {
+      // 新闻滚动判断
       amimate: false,
-      items: [{ name: "马云" }, { name: "雷军" }, { name: "王勤" }]
+      // 新闻列表数据
+      items: [{ name: "马云" }, { name: "雷军" }, { name: "王勤" }],
+      // swiper 初始化
+      swiperOption: {
+        allowSlideNext: true,
+        allowSlidePrev: false,
+        touchAngle: 40
+      },
+      // 点击切换的tabs
+      tabIndex: 0,
+      // 默认第一个tabs的宽度
+      oneTabWid: 0
     };
   },
-  components: {
-    indexswiper: indexSwiper
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
   },
-  created() {
+  components: {
+    indexswiper: indexSwiper,
+    swiper,
+    swiperSlide,
+    tablist: tabsSwiper
+  },
+  created() {},
+  mounted() {
     setInterval(this.newsScroll, 3000);
+    const TabWid = this.$refs.tabDiv.clientWidth;
+    this.oneTabWid = Math.floor(TabWid / 5);
   },
   methods: {
     newsScroll() {
@@ -97,6 +213,22 @@ export default {
         this.items.shift();
         this.amimate = false;
       }, 1000);
+    },
+    slideChange() {
+      this.tabIndex = this.swiper.activeIndex;
+      if (this.tabIndex < 4) {
+        this.$refs.tabDiv.scrollLeft = 0;
+      } else {
+        this.$refs.tabDiv.scrollLeft = (this.tabIndex - 2) * this.oneTabWid;
+      }
+      this.swiper.allowSlidePrev = this.tabIndex != 0;
+      this.swiper.allowSlideNext =
+        this.tabIndex != this.$refs.mySwiper.$children.length;
+    },
+    tabClick(newIndex) {
+      //点击tab
+      this.tabIndex = newIndex;
+      this.swiper.slideTo(newIndex, 1000, false);
     }
   }
 };
@@ -343,6 +475,120 @@ export default {
     font-size: 0.22rem;
     border-radius: 0.02rem;
     margin: 0 0 0.17rem 0.1rem;
+  }
+  .actives-list-text {
+    flex: 1;
+  }
+  .actives-list-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    color: #0c0202;
+    font-size: 0.28rem;
+    margin-bottom: 0.2rem;
+  }
+  .new-price {
+    color: #f5174a;
+    font-size: 0.32rem;
+    display: inline-block;
+  }
+  .old-price {
+    display: inline-block;
+    color: #999999;
+    font-size: 0.24rem;
+    margin-left: 0.12rem;
+    padding-top: 0.08rem;
+  }
+  .see-all {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0.32rem 0.45rem;
+    font-size: 0.26rem;
+    color: #fff;
+  }
+  .bgColr {
+    background-color: #333333;
+    padding: 0.1rem 0.3rem;
+  }
+  .see-more {
+    transform: scale(0.9);
+  }
+  .see-icon {
+    display: inline-block;
+    width: 0.12rem;
+    height: 0.22rem;
+    background-image: url("../../assets/images/index_more.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 0.1rem;
+  }
+}
+.edge {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #f8f8f8;
+}
+.tabsWrapper {
+  width: 100%;
+  overflow: hidden;
+  transition: all 1s;
+  .tabs-inner {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-wrap {
+    position: relative;
+    padding-top: 44px;
+  }
+  .tab-content {
+    height: 44px;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+  .scrollable {
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    // padding-bottom: 17px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    display: flex;
+    background-color: #fff;
+    height: 44px;
+    position: relative;
+  }
+  .tabs-item {
+    flex: 0 0 20%;
+    -webkit-box-flex: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        #e5e5e5,
+        #e5e5e5,
+        rgba(229, 229, 229, 0)
+      )
+      bottom left no-repeat;
+    background-size: 100% 1px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 44px;
+  }
+  .active {
+    color: red;
   }
 }
 </style>
