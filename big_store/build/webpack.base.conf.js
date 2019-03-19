@@ -4,8 +4,12 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const vuxLoader = require('vux-loader')
+// const {
+//   VueLoaderPlugin
+// } = require('vue-loader')
 
-function resolve (dir) {
+// eslint-disable-next-line space-before-function-paren
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -26,6 +30,9 @@ let webpackConfig = {
       '@': resolve('src')
     }
   },
+  // plugins: [
+  //   new VueLoaderPlugin()
+  // ],
   module: {
     rules: [
       // ...(config.dev.useEslint? [{
@@ -76,5 +83,5 @@ let webpackConfig = {
   }
 }
 module.exports = vuxLoader.merge(webpackConfig, {
-  
+
 })

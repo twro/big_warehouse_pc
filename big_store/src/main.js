@@ -7,9 +7,12 @@ import router from './router'
 import App from './App'
 import 'vue-ydui/dist/ydui.flexible'
 import 'vue-ydui/dist/ydui.base.css'
+import axios from 'axios'
+import QS from 'qs'
 // FastClick.attach(document.body)
 Vue.config.productionTip = false
-
+Vue.prototype.axios = axios
+Vue.prototype.qs = QS
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

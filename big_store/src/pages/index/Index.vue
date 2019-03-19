@@ -236,7 +236,7 @@ export default {
 <style lang="less" scoped>
 .index-wrap {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   // overflow: hidden;
   background: #fff;
   padding-bottom: 53px;
@@ -590,6 +590,9 @@ export default {
   .active {
     color: red;
   }
+}
+.today-content{
+  background: #f8f8f8;
 }
 </style>
 
