@@ -235,6 +235,7 @@
                 },
                 bgHide: function (e) {
                     var showBg = document.getElementById('showCar');
+                    console.log(showBg.contains(e.target))
                     if (showBg) {
                         if (!showBg.contains(e.target)) {
                             this.carShow = !this.carShow;
