@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <transition name="fade">
       <router-view></router-view>
     </transition>
@@ -30,13 +30,17 @@ export default {
 </script>
 
 <style lang="less">
+@import url("./assets/css/reset.css");
+[v-cloak] {
+  display: none;
+}
 body,
 html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
 }
-#app{
+#app {
   width: 100%;
   height: 100%;
 }

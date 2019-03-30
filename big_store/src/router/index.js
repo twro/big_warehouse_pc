@@ -6,6 +6,9 @@ const Home = resolve => require(['@/pages/home/Home'], resolve)
 const TabSwiper = resolve => require(['@/components/tabSwiper/tabSwiper'], resolve)
 // const PullToRefresh = resolve => require(['@/components/scrollPage/PullToRefresh'], resolve)
 const LoadMore = resolve => require(['@/pages/loadMore/ScrollMore'], resolve)
+const Classify = resolve => require(['@/pages/classify/Classify'], resolve)
+const Nav = resolve => require(['@/components/Nav/nav'], resolve)
+const MescrollCom = resolve => require(['@/components/MscrollComponent/MscrollComponent'], resolve)
 Vue.use(Router)
 
 export default new Router({
@@ -26,9 +29,23 @@ export default new Router({
       path: '/pull',
       name: 'pull',
       component: LoadMore
-    }]
+    },
+    {
+      path: '/classify',
+      name: 'classify',
+      component: Classify
+    }, {
+      path: '/mescroll',
+      name: 'mescroll',
+      component: MescrollCom
+    }
+    ]
   },
   {
+    path: '/nav',
+    name: 'nav',
+    component: Nav
+  }, {
     path: '/',
     name: 'Login',
     component: Login,

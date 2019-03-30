@@ -147,19 +147,20 @@ export default {
     }
   },
   created() {},
-  mounted() {
-    console.log(this.adds);
-  }
+  mounted() {}
 };
 </script>
 <style lang='less' scoped>
 .yo-scroll {
   position: absolute;
-  top: 0rem;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   overflow: auto;
+  // min-height: 500px;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
   .inner {

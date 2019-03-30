@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 // import FastClick from 'fastclick'
-// import store from './store'
+import store from './store/store'
 import router from './router'
 import App from './App'
 import 'vue-ydui/dist/ydui.flexible'
@@ -17,7 +17,7 @@ Vue.prototype.qs = QS
 new Vue({
   el: '#app',
   router,
-  // store,
+  store,
   template: '<App/>',
   components: {
     App

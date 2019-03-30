@@ -6,14 +6,15 @@
       </div>
 
       <div class="form-list">
-        <input type="text" name="tel" placeholder="请输入您的手机号码" maxlength="11">
+        <input type="text" name="tel" v-model="phone" placeholder="请输入您的手机号码" maxlength="11">
       </div>
       <div class="form-list getCode">
-        <input type="text" name="code" placeholder="请输入短信验证码" maxlength="6">
+        <input type="text" name="code" v-model="verify" placeholder="请输入短信验证码" maxlength="6">
         <button class="getMsg">获取验证码</button>
       </div>
       <div class="login-btn" @click.stop="loginIn">登录</div>
-      <div class="agreement">已同意
+      <div class="agreement">
+        已同意
         <router-link to="/" class="main-color">《用户服务协议》</router-link>
       </div>
     </div>
@@ -21,17 +22,22 @@
 </template>
 
 <script>
+import * as action from "@/store/action";
 export default {
   name: "Login",
   data() {
     return {
       name: "",
-      verifyCode: ""
+      verifyCode: "",
+      phone: "",
+      verify: ""
     };
   },
   mounted() {},
   methods: {
     loginIn() {
+
+      this.$store.commit(action.LOGIN,'b88626c0-0cf4-43f2-a184-7b0528bdc3a4');
       this.$router.push("/index");
     }
   }

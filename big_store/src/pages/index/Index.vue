@@ -140,13 +140,13 @@
         </div>
       </div>
       <div class="today-content">
-        <swiper
-          style="height: 30%;"
+        <!-- <swiper
+          style="height: 100%;"
           :options="swiperOption"
           ref="mySwiper"
           @slideChange="slideChange"
         >
-          <swiper-slide style="height:20%;">
+          <swiper-slide style="height:100%;">
             <tablist></tablist>
           </swiper-slide>
           <swiper-slide>2</swiper-slide>
@@ -158,7 +158,8 @@
           <swiper-slide>8</swiper-slide>
           <swiper-slide>9</swiper-slide>
           <swiper-slide>10</swiper-slide>
-        </swiper>
+        </swiper>-->
+        <tablist :typeNo="tabIndex" ref="childs"></tablist>
       </div>
     </div>
   </div>
@@ -167,7 +168,8 @@
 import "swiper/dist/css/swiper.css";
 import indexSwiper from "@/components/indexSwiper/IndexSwiper";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
-import tabsSwiper from "@/components/tabSwiper/tabSwiper";
+// import tabsSwiper from "@/components/tabSwiper/tabSwiper";
+import protogenesis from "@/pages/loadMore/ScrollMore";
 export default {
   name: "index",
   data() {
@@ -180,7 +182,9 @@ export default {
       swiperOption: {
         allowSlideNext: true,
         allowSlidePrev: false,
-        touchAngle: 40
+        touchAngle: 40,
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true //修改swiper的父元素时，自动初始化swiper
       },
       // 点击切换的tabs
       tabIndex: 0,
@@ -197,7 +201,8 @@ export default {
     indexswiper: indexSwiper,
     swiper,
     swiperSlide,
-    tablist: tabsSwiper
+    tablist: protogenesis
+    // tablist: tabsSwiper
   },
   created() {},
   mounted() {
@@ -228,7 +233,14 @@ export default {
     tabClick(newIndex) {
       //点击tab
       this.tabIndex = newIndex;
-      this.swiper.slideTo(newIndex, 1000, false);
+      // this.swiper.slideTo(newIndex, 1000, false);
+      if (this.tabIndex < 4) {
+        this.$refs.tabDiv.scrollLeft = 0;
+      } else {
+        this.$refs.tabDiv.scrollLeft = (this.tabIndex - 2) * this.oneTabWid;
+      }
+      this.$refs.childs.clearLsit();
+      this.$refs.childs.onRefresh(function() {});
     }
   }
 };
@@ -591,8 +603,22 @@ export default {
     color: red;
   }
 }
-.today-content{
+.today-content {
   background: #f8f8f8;
+  // position: absolute;
+  // left: 0;
+  // top: 44px;
+  // right: 0;
+  // bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.today-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1231231;
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="load-wrapper">
-    <v-scroll :on-refresh="onRefresh" :on-infinite="onInfinite" :adds="1">
+    <v-scroll :on-infinite="onInfinite" :on-refresh="onRefresh">
       <ul>
         <li style="height:100px;" v-for="(item,index) in currentlist" :key="index">{{item.Title}}</li>
       </ul>
@@ -13,8 +13,7 @@ import Scroll from "@/components/scrollPage/PullToRefresh";
 // import axios from "axios";
 export default {
   props: {
-    nos: Number,
-    default: 1
+    typeNo: { type: Number, default: 1 }
   },
   components: {
     "v-scroll": Scroll
@@ -30,8 +29,15 @@ export default {
     };
   },
   computed: {},
-  watch: {},
+  watch: {
+    typeNo(val) {
+      this.SysNo = Number(val) + 1;
+    }
+  },
   methods: {
+    clearLsit(){
+      this.currentlist = [];
+    },
     onRefresh(done) {
       this.onRefreshPort(done);
     },
@@ -48,7 +54,7 @@ export default {
         }
       }).then(res => {
         // console.log(res);
-        const time = Math.floor(Math.random() * 100 + 100);
+        const time = Math.floor(Math.random() * 500 + 500);
         setTimeout(() => {
           this.currentlist = res.data.Data.Content;
           this.page = 1;
@@ -91,4 +97,10 @@ export default {
 };
 </script>
 <style lang='less' scoped>
+.load-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 600px;
+}
 </style>
