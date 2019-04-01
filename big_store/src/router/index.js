@@ -9,6 +9,7 @@ const LoadMore = resolve => require(['@/pages/loadMore/ScrollMore'], resolve)
 const Classify = resolve => require(['@/pages/classify/Classify'], resolve)
 const Nav = resolve => require(['@/components/Nav/nav'], resolve)
 const MescrollCom = resolve => require(['@/components/MscrollComponent/MscrollComponent'], resolve)
+const BscrollLeftToRight = resolve => require(['@/components/BscrollLeftToRight/BscrollLeftToRight'], resolve);
 Vue.use(Router)
 
 export default new Router({
@@ -38,6 +39,11 @@ export default new Router({
       path: '/mescroll',
       name: 'mescroll',
       component: MescrollCom
+    },
+    {
+      path: '/bscroll',
+      name: 'bscroll',
+      component: BscrollLeftToRight
     }
     ]
   },

@@ -45,7 +45,7 @@ export default {
         isBoth: true, //上
         callback: this.upCallback,
         page: {
-          num: 0,
+          num: 0, // 页码。如果页码是从0开始的，这边要写-1，因为加载的时候都是++num;不是num++;
           size: 10
         },
         noMoreSize: 5,
