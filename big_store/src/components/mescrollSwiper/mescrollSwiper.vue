@@ -1,25 +1,28 @@
 <template>
   <div class="mescroll-swiper">
-    <mescroll-vue ref="mescroll" @init="mescrollInit" :down="mescrollDown" :up="mescrollUp">
-      <div class="scrollx mscroll-touch-x">
-        <div id="scrollContent" class="scrollx-content" ref="scrollContent">
-          <ul id="nav" class="nav">
-            <li
-              :class="index == curNavIndex?'active':''"
-              v-for="(item, index) in typeNavList"
-              :key="index"
-              ref="itemLi"
-              @click="changePage(index,item.SysNo)"
-            >{{item.Type}}</li>
+    
+      <mescroll-vue ref="mescroll" @init="mescrollInit" :down="mescrollDown" :up="mescrollUp">
+        <div class="scrollx mscroll-touch-x">
+          <div id="scrollContent" class="scrollx-content" ref="scrollContent">
+            <ul id="nav" class="nav">
+              <li
+                :class="index == curNavIndex?'active':''"
+                v-for="(item, index) in typeNavList"
+                :key="index"
+                ref="itemLi"
+                @click="changePage(index,item.SysNo)"
+              >{{item.Type}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="data-list" id="dataList">
+          <ul class="data-lisyul">
+            <router-link to="/index">
+              <li class="data-list-li" v-for="(item, index) in dataList" :key="index">{{item.Title}}</li>
+            </router-link>
           </ul>
         </div>
-      </div>
-      <div class="data-list" id="dataList">
-        <ul class="data-lisyul">
-          <li class="data-list-li" v-for="(item, index) in dataList" :key="index">{{item.Title}}</li>
-        </ul>
-      </div>
-    </mescroll-vue>
+      </mescroll-vue>
   </div>
 </template>
 
@@ -63,6 +66,15 @@ export default {
       }
     };
   },
+  beforeRouteEnter(to, from, next) {
+    next(vm => {
+      vm.$refs.mescroll && vm.$refs.mescroll.beforeRouteEnter();
+    });
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$refs.mescroll && this.$refs.mescroll.beforeRouteLeave();
+    next();
+  },
   computed: {},
   watch: {},
   methods: {
@@ -98,10 +110,14 @@ export default {
           itemLi.offsetLeft +
           itemLi.clientWidth / 2 -
           document.body.clientWidth / 2; //居中
-        this.mescroll.getStep(star, end, (step, timer) => {
-          scrollxContent.scrollLeft = step;
-          console.log(step)
-        },200);
+        this.mescroll.getStep(
+          star,
+          end,
+          (step, timer) => {
+            scrollxContent.scrollLeft = step;
+          },
+          200
+        );
         this.dataList = [];
         this.mescroll.resetUpScroll(); // 刷新列表数据
       }
