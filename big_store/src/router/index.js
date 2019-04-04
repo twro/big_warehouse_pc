@@ -9,7 +9,8 @@ const LoadMore = resolve => require(['@/pages/loadMore/ScrollMore'], resolve)
 const Classify = resolve => require(['@/pages/classify/Classify'], resolve)
 const Nav = resolve => require(['@/components/Nav/nav'], resolve)
 const MescrollCom = resolve => require(['@/components/MscrollComponent/MscrollComponent'], resolve)
-const BscrollLeftToRight = resolve => require(['@/components/BscrollLeftToRight/BscrollLeftToRight'], resolve);
+const BscrollLeftToRight = resolve => require(['@/components/BscrollLeftToRight/BscrollLeftToRight'], resolve)
+const mescrollSwiper = resolve => require(['@/components/mescrollSwiper/mescrollSwiper'], resolve)
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +59,10 @@ export default new Router({
     meta: {
       index: 0
     }
+  }, {
+    path: '/msswiper',
+    name: 'mescrollSwiper',
+    component: mescrollSwiper
   }
   ]
 })
