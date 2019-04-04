@@ -101,7 +101,7 @@ export default {
         this.mescroll.getStep(star, end, (step, timer) => {
           scrollxContent.scrollLeft = step;
           console.log(step)
-        });
+        },200);
         this.dataList = [];
         this.mescroll.resetUpScroll(); // 刷新列表数据
       }
