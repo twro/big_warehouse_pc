@@ -155,18 +155,24 @@ export default {
     font-size: 0.28rem;
     color: rgb(88, 87, 87);
     position: relative;
-    &.active {
-      background: #fff;
-      color: rgb(1, 1, 1);
-      &::after {
+    &::after {
         content: "";
         display: inline-block;
         width: 0.06rem;
-        height: 100%;
+        height: 0;
         background: rgb(245, 23, 74);
         position: absolute;
         left: 0;
         top: 0;
+        opacity: 0;
+        transition: all .4s;
+      }
+    &.active {
+      background: #fff;
+      color: rgb(1, 1, 1);
+      &::after {
+        height: 100%;
+        opacity: 1;
       }
     }
   }
@@ -182,5 +188,7 @@ export default {
 .left-inner {
   width: 100%;
   transition: all 1s;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 </style>

@@ -403,8 +403,9 @@
                     swiperWidth = mySwiper2.$el[0].clientWidth
                     maxTranslate = mySwiper2.maxTranslate();
                     maxWidth = -maxTranslate + swiperWidth / 2
-                    $(mySwiper2.slides[mySwiper2.clickedIndex]).addClass('active-nav').siblings().removeClass(
-                        'active-nav');
+                    $(mySwiper2.slides[mySwiper2.clickedIndex]).addClass('active-nav').siblings()
+                        .removeClass(
+                            'active-nav');
                     slide = mySwiper2.slides[mySwiper2.clickedIndex]
                     slideLeft = slide.offsetLeft
                     slideWidth = slide.clientWidth
@@ -521,6 +522,31 @@
             liArr[4].innerHTML = sec;
         }
         getTime()
+
+
+        var overscroll = function (el) {
+            el.addEventListener('touchstart', function () {
+                var top = el.scrollTop,
+                    totalScroll = el.scrollHeight,
+                    currentScroll = top + el.offsetHeight;
+                if (top === 0) {
+                    el.scrollTop = 1;
+                } else if (currentScroll === totalScroll) {
+                    el.scrollTop = top - 1;
+                }
+            });
+
+            el.addEventListener('touchmove', function (evt) {
+                if (el.offsetHeight < el.scrollHeight)
+                    evt._isScroller = true;
+            });
+        }
+        overscroll(document.querySelector('.g-scrollview'));
+        document.body.addEventListener('touchmove', function (evt) {
+            if (!evt._isScroller) {
+                evt.preventDefault();
+            }
+        });
     </script>
 </body>
 

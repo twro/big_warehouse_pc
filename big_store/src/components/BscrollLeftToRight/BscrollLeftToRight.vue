@@ -1,28 +1,28 @@
 <template>
-  <div class="bs-wrap">
-    <div class="menu-wrapper" ref="menuWrapper">
-      <div class="menu-inner">
-        <ul>
-          <li
-            class="menu-item"
-            v-for="(item, index) in 20"
-            :key="index"
-            :class="{active:activeIndex == index}"
-            @click="tabClickIndex(index)"
-            ref="menuList"
-          >
-            <span class="menu-txt">{{index}}</span>
-          </li>
-        </ul>
+  <div class="bs-box">
+    <div class="bs-wrap">
+      <div class="menu-wrapper" ref="menuWrapper">
+        <div class="menu-inner">
+          <ul>
+            <li
+              class="menu-item"
+              v-for="(item, index) in 20"
+              :key="index"
+              :class="{active:activeIndex == index}"
+              @click="tabClickIndex(index,$event)"
+              ref="menuList"
+            >{{index}}</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="shop-wrapper" ref="shopWrapper">
-      <div class="shop-inner">
-        <ul ref="itemList">
-          <li class="shops-li" v-for="(item, index) in 20" :key="index">
-            <div class="ships-item">test{{index}}</div>
-          </li>
-        </ul>
+      <div class="shop-wrapper" ref="shopWrapper">
+        <div class="shop-inner">
+          <ul ref="itemList">
+            <li class="shops-li" v-for="(item, index) in 20" :key="index" ref="rightLi">
+              <div class="ships-item">test{{index}}</div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -37,8 +37,8 @@ export default {
       //   activeIndex: 0,
       scrollY: 0, //右侧列表滑动的y轴坐标
       rightLiTops: [], //所有分类头部位置
-      leftBscroll: null,
-      rightBscroll: null
+      // leftBscroll: null,
+      // rightBscroll: null
     };
   },
   computed: {
@@ -52,23 +52,33 @@ export default {
   },
   watch: {},
   methods: {
-    tabClickIndex(index) {
+    tabClickIndex(index, e) {
+      if (!e._constructed) {
+        return;
+      }
       //   this.activeIndex = index;
-      this.scrollY = this.rightLiTops[index];
-      this.rightBscroll.scrollTo(0, -this.scrollY, 200);
+      // 这是滚动到相对的位置
+      // this.scrollY = this.rightLiTops[index];
+      // this.rightBscroll.scrollTo(0, -this.scrollY, 300);
+      // 这个是滚动到相对的元素位置
+      let alllist = this.$refs.itemList.querySelectorAll(".shops-li");
+      let el = alllist[index];
+      console.log(el)
+      this.rightBscroll.scrollToElement(el, 300);
     },
     _initBScroll() {
       var self = this;
       this.leftBscroll = new BScroll(this.$refs.menuWrapper, {
         click: true,
         taps: true,
-        probeType: 3
+        bounce:false
       });
       this.rightBscroll = new BScroll(this.$refs.shopWrapper, {
-        probeType: 3
+        probeType: 3,
+        bounce:false
       });
       this.rightBscroll.on("scroll", pos => {
-        this.scrollY = Math.abs(pos.y);
+        this.scrollY = Math.abs(Math.round(pos.y));
       });
     },
     _initRightHeight() {
@@ -98,6 +108,14 @@ export default {
 };
 </script>
 <style lang='less' scoped>
+.bs-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .bs-wrap {
   width: 100%;
   height: 100%;
@@ -125,7 +143,7 @@ export default {
     justify-items: center;
     align-items: center;
     position: relative;
-    transition: all 1s;
+    transition: all 0.5s;
     &::after {
       content: "";
       display: block;
@@ -144,7 +162,7 @@ export default {
     &.active::after {
       height: 0.88rem;
       opacity: 1;
-      transition: all 1s;
+      transition: all 0.5s;
     }
   }
 
@@ -157,7 +175,7 @@ export default {
   .shop-inner {
     width: 100%;
     // height: 100%;
-    background: #fff;
+    // background: #fff;
     ul {
       width: 100%;
       height: 100%;
@@ -165,7 +183,7 @@ export default {
   }
   .shops-li {
     width: 100%;
-    height: 600px;
+    height: 200px;
     background: #f5215a;
   }
 }

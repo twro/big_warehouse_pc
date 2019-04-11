@@ -33,10 +33,13 @@ export default {
       verify: ""
     };
   },
-  mounted() {},
+  mounted() {
+    if(localStorage.getItem("token")){
+      this.$router.push("/index");
+    }
+  },
   methods: {
     loginIn() {
-
       this.$store.commit(action.LOGIN,'b88626c0-0cf4-43f2-a184-7b0528bdc3a4');
       this.$router.push("/index");
     }

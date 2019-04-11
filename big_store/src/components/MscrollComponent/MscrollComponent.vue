@@ -1,11 +1,11 @@
 <template>
   <div class="mscroll-wrap">
+    <div class="nav">
+      <span :class="getActiveCls(1)" @click="changeTab(1)">全部</span>
+      <span :class="getActiveCls(2)" @click="changeTab(2)">奶粉</span>
+      <span :class="getActiveCls(3)" @click="changeTab(3)">图书</span>
+    </div>
     <mescroll-vue ref="mescroll" :down="mescrollDown" :up="mescrollUp" @init="mescrollInit">
-      <div class="nav">
-        <span :class="getActiveCls(1)" @click="changeTab(1)">全部</span>
-        <span :class="getActiveCls(2)" @click="changeTab(2)">奶粉</span>
-        <span :class="getActiveCls(3)" @click="changeTab(3)">图书</span>
-      </div>
       <div class="data-list" id="dataList">
         <ul class="data-lisyul">
           <li class="data-list-li" v-for="(item, index) in dataList" :key="index">{{item.Title}}</li>

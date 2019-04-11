@@ -11,18 +11,28 @@ const Nav = resolve => require(['@/components/Nav/nav'], resolve)
 const MescrollCom = resolve => require(['@/components/MscrollComponent/MscrollComponent'], resolve)
 const BscrollLeftToRight = resolve => require(['@/components/BscrollLeftToRight/BscrollLeftToRight'], resolve)
 const mescrollSwiper = resolve => require(['@/components/mescrollSwiper/mescrollSwiper'], resolve)
+const goodsDetail = resolve => require(['@/pages/goodsDetail/goodsDetail'], resolve)
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [{
+    path: '/',
+    redirect: {
+      name: 'Login'
+    }
+  },
+  {
     path: '/home',
     name: 'Home',
     component: Home,
     children: [{
       path: '/index',
       name: 'Index',
-      component: Index
+      component: Index,
+      meta: {
+        requireAuth: true
+      }
     }, {
       path: '/swiper',
       name: 'swiper',
@@ -53,16 +63,19 @@ export default new Router({
     name: 'nav',
     component: Nav
   }, {
-    path: '/',
+    path: '/login',
     name: 'Login',
-    component: Login,
-    meta: {
-      index: 0
-    }
+    component: Login
+
   }, {
     path: '/msswiper',
     name: 'mescrollSwiper',
     component: mescrollSwiper
+  },
+  {
+    path: '/detail',
+    name: 'goodsDetail',
+    component: goodsDetail
   }
   ]
 })

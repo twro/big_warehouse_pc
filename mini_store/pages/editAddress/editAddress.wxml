@@ -33,7 +33,7 @@
       <view class='form-list'>
         <view class="form-item-hd">设为默认：</view>
         <view class="form-item-bd">
-          <switch type="switch" name="default" color="#3fe65b" class='default' />
+          <switch type="switch" name="default" color="#3fe65b" class='default' checked="{{checked}}"/>
         </view>
       </view>
       <button formType="submit" class="save-btn">保存并使用</button>

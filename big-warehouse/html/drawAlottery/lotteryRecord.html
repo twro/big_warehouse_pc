@@ -36,14 +36,13 @@
             <div class="lucky-list">
                 <!-- 占位用的div -->
                 <div class="list-wrapper list-wrapper-hook" ref="listWrapper">
-                    <div class="lucky-list-perch">
+                    <div class="lucky-list-perch" :style="{transform: recordList.length == 0 ?'translate(0px, 0px) translateZ(0px)':''}">
                         <div class="top-tip">
                             <span class="refresh-hook" ref="topTip">下拉刷新</span>
                         </div>
                         <div class="lucky-list-wrap">
                             <ul class="list-content list-content-hook">
-
-                                <li class="lucky-item" v-for="(item,index) in 20" :key="index">
+                                <li class="lucky-item" v-for="(item,index) in recordList" :key="index">
                                     <a :href="'./lotteryRecordDetail.html?id='+index">
                                         <div class="lucky-name">
                                             <span class="lucky-realname">公司十周年活动</span>
@@ -77,7 +76,10 @@
                 return {
                     oneNavWidth: 0,
                     clickIndex: 0,
-                    recordList: []
+                    recordList: [],
+                    scroll: false,
+                    page: 1,
+                    showAllFlag: false
                 }
             },
             computed: {
@@ -87,43 +89,96 @@
 
             },
             mounted: function () {
+                // for( var i = 0; i < 20; i++ ){
+                //     this.recordList.push(i)
+                // }
                 this.initScroll();
                 //第一次进入加载数据
-                this.reloadData()
+                // this.reloadData();
+                // setTimeout(() => {
+
+                // }, 200)
             },
             methods: {
                 getRecoedList(index) {
                     this.clickIndex = index;
+                    this.scroll.scrollTo(0, 0, 500)
                     this.recordList = [];
                     //点击切换 加载数据
-                    this.reloadData();
+                    // this.reloadData();
+                    this.initScroll()
                 },
                 initScroll() {
-                    let scroll = new BScroll(this.$refs.listWrapper, {
-                        probeType: 1,
-                        click: true,
-                        taps: true
-                    })
-                    scroll.on("scroll", (position) => {
-                        if (position.y > 30) {
-                            this.$refs.topTip.innerText = "释放立即刷新";
-                        }
-                    })
-                    scroll.on("touchend", (position) => {
-                        if (position.y > 30) {
-                            setTimeout(() => {
-                                this.$refs.topTip.innerText = "释放立即刷新";
-                                this.refreshAlert("刷新成功");
-                                scroll.refresh();
-                            }, 1000)
-                        } else if (position.y < scroll.maxScrollY) {
-                            this.$refs.bottomTip.innerText = "加载中...";
-                            setTimeout(() => {
-                                this.$refs.bottomTip.innerText = "查看更多";
-                                this.reloadData();
-                            }, 1000)
-                        }
-                    })
+                    // let scroll = new BScroll(this.$refs.listWrapper, {
+                    //     probeType: 2,
+                    //     click: true,
+                    //     taps: true,
+                    // })
+                    // this.scroll = scroll;
+                    // scroll.on("scroll", (position) => {
+                    //     if (position.y > 30) {
+                    //         this.$refs.topTip.innerText = "释放立即刷新";
+                    //     }
+                    // })
+                    // scroll.on("touchend", (position) => {
+                    //     if (position.y > 30) {
+                    //         setTimeout(() => {
+                    //             this.$refs.topTip.innerText = "释放立即刷新";
+                    //             this.refreshAlert("刷新成功");
+                    //             scroll.refresh();
+                    //         }, 1000)
+                    //     } else if (position.y < scroll.maxScrollY) {
+                    //         this.$refs.bottomTip.innerText = "加载中...";
+                    //         setTimeout(() => {
+                    //             this.$refs.bottomTip.innerText = "查看更多";
+                    //             this.reloadData();
+                    //             scroll.refresh()
+                    //         }, 1000)
+                    //     }else{
+                    //         scroll.refresh()
+                    //     }
+                    // })
+
+                    var self = this;
+                    if (!this.showAllFlag) {
+                        this.showAllFlag = true;
+                        $.ajax({
+                            url: "https://app.shunyingglobal.cn/B2CApp/Common.svc/GetOneSharingGood",
+                            data: {
+                                SysNo: 1,
+                                key: "",
+                                currentPage: self.page,
+                                pageSize: 10
+                            },
+                            success: function (res) {
+                                console.log(res)
+                                self.recordList = self.recordList.concat(res.Data.Content);
+                                self.page++;
+                                self.showAllFlag = false;
+                                self.$nextTick(function () {
+                                    if (!self.scroll) {
+                                        self.scroll = new BScroll(self.$refs.listWrapper, {
+                                            probeType: 2,
+                                            click: true,
+                                            taps: true,
+                                            // bounce:false
+                                        })
+                                        self.scroll.on("touchend", (position) => {
+                                            if (position.y < self.scroll
+                                                .maxScrollY) {
+                                                self.initScroll();
+                                            }
+                                        })
+                                    } else {
+                                        self.scroll.refresh();
+                                    }
+
+
+                                })
+                            }
+                        })
+                    }
+
                 },
                 refreshAlert(text) {
                     text = text || "操作成功";
@@ -135,10 +190,17 @@
                     }, 1000);
                 },
                 // 数据加载
-                reloadData() {
-                    // recordList拼接展示
-                    console.log(0)
-                }
+                // reloadData() {
+                //     // recordList拼接展示
+                //     console.log(2)
+                //     for (var i = 0; i < 10; i++) {
+                //         this.recordList.push(i);
+                //         // this.scroll.refresh()
+                //         if (this.scroll) {
+                //             this.scroll.refresh()
+                //         }
+                //     }
+                // }
 
             }
         })

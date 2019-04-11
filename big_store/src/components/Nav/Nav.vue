@@ -6,7 +6,7 @@
     <div class="navbar-center">
       <span class="navbar-title">{{title}}</span>
     </div>
-    <router-link to class="navbar-item">
+    <router-link :to="moreLink" class="navbar-item" v-if="more">
       <slot></slot>
     </router-link>
   </header>
@@ -17,11 +17,19 @@ export default {
   props: {
     title: {
       type: String,
-      default: ""
+      default: "社栈优品"
     },
     link: {
       type: String,
-      default: ""
+      default: "/"
+    },
+    more: {
+      type: Boolean,
+      default: false
+    },
+    moreLink: {
+      type: String,
+      default: "/"
     }
   },
   components: {},
@@ -32,9 +40,7 @@ export default {
   watch: {},
   methods: {},
   created() {},
-  mounted() {
-    console.log(this.a);
-  }
+  mounted() {}
 };
 </script>
 <style lang='less' scoped>
@@ -44,9 +50,11 @@ export default {
   position: relative;
   display: flex;
   background: #fff;
+  z-index: 1001;
   position: fixed;
   left: 0;
   top: 0;
+  border-bottom: 1px solid #f8f8f8;
   .navbar-item {
     height: 0.9rem;
     min-width: 25%;

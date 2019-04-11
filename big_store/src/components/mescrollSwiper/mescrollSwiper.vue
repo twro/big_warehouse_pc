@@ -1,28 +1,27 @@
 <template>
   <div class="mescroll-swiper">
-    
-      <mescroll-vue ref="mescroll" @init="mescrollInit" :down="mescrollDown" :up="mescrollUp">
-        <div class="scrollx mscroll-touch-x">
-          <div id="scrollContent" class="scrollx-content" ref="scrollContent">
-            <ul id="nav" class="nav">
-              <li
-                :class="index == curNavIndex?'active':''"
-                v-for="(item, index) in typeNavList"
-                :key="index"
-                ref="itemLi"
-                @click="changePage(index,item.SysNo)"
-              >{{item.Type}}</li>
-            </ul>
-          </div>
-        </div>
-        <div class="data-list" id="dataList">
-          <ul class="data-lisyul">
-            <router-link to="/index">
-              <li class="data-list-li" v-for="(item, index) in dataList" :key="index">{{item.Title}}</li>
-            </router-link>
-          </ul>
-        </div>
-      </mescroll-vue>
+    <div class="scrollx mscroll-touch-x">
+      <div id="scrollContent" class="scrollx-content" ref="scrollContent">
+        <ul id="nav" class="nav">
+          <li
+            :class="index == curNavIndex?'active':''"
+            v-for="(item, index) in typeNavList"
+            :key="index"
+            ref="itemLi"
+            @click="changePage(index,item.SysNo)"
+          >{{item.Type}}</li>
+        </ul>
+      </div>
+    </div>
+    <mescroll-vue ref="mescroll" @init="mescrollInit" :down="mescrollDown" :up="mescrollUp">
+      <div class="data-list" id="dataList">
+        <ul class="data-lisyul">
+          <router-link to="/index">
+            <li class="data-list-li" v-for="(item, index) in dataList" :key="index">{{item.Title}}</li>
+          </router-link>
+        </ul>
+      </div>
+    </mescroll-vue>
   </div>
 </template>
 
@@ -105,23 +104,29 @@ export default {
         this.curNavIndex = i;
         let scrollxContent = this.$refs.scrollContent;
         let itemLi = this.$refs.itemLi[i];
+        // 起始位置
         const star = scrollxContent.scrollLeft;
-        var end =
+        // 结束位置
+        var end = Math.floor(
           itemLi.offsetLeft +
-          itemLi.clientWidth / 2 -
-          document.body.clientWidth / 2; //居中
+            Math.floor(itemLi.clientWidth / 2) -
+            Math.floor(document.body.clientWidth / 2)
+        );
+        //居中以及自动切换
         this.mescroll.getStep(
           star,
           end,
           (step, timer) => {
             scrollxContent.scrollLeft = step;
           },
-          200
+          500
         );
         this.dataList = [];
+        // 刷新列表数据
         this.mescroll.resetUpScroll(); // 刷新列表数据
       }
     },
+    // 上啦回调以及请求更多数据
     upCallback(page, mescroll) {
       this.getListDataFromNet(
         this.pdType,
@@ -139,6 +144,7 @@ export default {
         }
       );
     },
+    // 数据请求
     getListDataFromNet(
       pdType,
       pageNum,
@@ -160,9 +166,11 @@ export default {
         )
         .then(res => {
           //   console.log(res);
+          // 模拟延时,随机生成1000以内的数字
+          const time = Math.floor(Math.random() * 500 + 500);
           setTimeout(() => {
             successCallback(res.data.Data.Content);
-          }, 1000);
+          }, time);
         })
         .catch(e => {
           errorCallback && errorCallback();
@@ -171,6 +179,7 @@ export default {
   },
   created() {},
   mounted() {
+    // 获取分类
     this.getTypeList();
   }
 };
@@ -184,11 +193,15 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 21212121;
   .scrollx-content {
     width: 100%;
     height: 100%;
     overflow-x: scroll;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    box-sizing: content-box;
   }
   .nav {
     // padding: 0 0.16rem 0 0.1rem;
@@ -234,7 +247,8 @@ export default {
 }
 .mescroll {
   position: fixed;
-  top: 0.88rem;
+  top: 0rem;
+  padding-top: 0.88rem;
 }
 .data-list li {
   height: 100px;

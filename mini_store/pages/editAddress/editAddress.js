@@ -9,7 +9,8 @@ Page({
     address: [],
     name: '',
     phone: '',
-    detail: ""
+    detail: "",
+    checked:false
   },
 
   /**
@@ -30,7 +31,8 @@ Page({
       ],
       name: "张三",
       phone: "13412345678",
-      detail: "不知道啥地方去"
+      detail: "不知道啥地方去",
+      checked:true
     })
   },
 

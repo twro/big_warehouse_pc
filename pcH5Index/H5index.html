@@ -9,7 +9,8 @@
     <title>社栈优品</title>
     <script src="./js/ydui.flexible.js"></script>
     <link rel="stylesheet" href="./css/ydui.css">
-    <link rel="stylesheet" href="./css/h5Index.min.css">
+    <!-- <link rel="stylesheet" href="./css/h5Index.min.css"> -->
+    <link rel="stylesheet" href="./css/h5All.min.css">
 </head>
 
 <body>
@@ -80,7 +81,7 @@
                         <span class="title">合作伙伴</span>
                     </div>
                     <div class="cooperation-list" ref="cooperationUl">
-                        <ul class="cooperation-ul" >
+                        <ul class="cooperation-ul">
                             <li class="cooperation-li" v-for="(item,index) in showBrandList" :key="index">
                                 <img :src="item" alt="">
                             </li>
@@ -134,16 +135,18 @@
                             <a href="./H5index.html"><span>首页</span></a>
                         </li>
                         <li class="all-nav-li resiger-md">
-                            <a href=""><span>门店注册</span></a>
+                            <a
+                                href="http://m.samzhan.com/html/register/Stores.html?_=1480405186452"><span>门店注册</span></a>
                         </li>
                         <li class="all-nav-li resiger-customer">
-                            <a href=""><span>普通用户</span></a>
+                            <a href="http://m.samzhan.com/html/register/Wechat.html?sid="><span>会员用户</span></a>
                         </li>
                         <li class="all-nav-li resiger-shopper">
-                            <a href=""><span>商家入驻</span></a>
+                            <a
+                                href="http://m.samzhan.com/html/register/supplier.html?_=1480405186452"><span>商家入驻</span></a>
                         </li>
                         <li class="all-nav-li resiger-member">
-                            <a href=""><span>会员注册</span></a>
+                            <a href="http://m.samzhan.com/html/register/member.html?id="><span>店长注册</span></a>
                         </li>
                         <li class="all-nav-li about">
                             <a href="./aboutMe.html"><span>关于我们</span></a>
@@ -199,7 +202,7 @@
             }
         },
         mounted: function () {
-            
+
         },
         methods: {
             hideMask: function (e) {
@@ -212,8 +215,8 @@
             }
         },
         watch: {
-            showBrandList(val){
-                console.log(val)
+            showBrandList(val) {
+                // console.log(val)
             }
         }
     })
