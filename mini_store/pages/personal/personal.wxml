@@ -36,7 +36,7 @@
          </view>
          <view class="option-txt">我的地址</view>
    </navigator>  
-   <navigator class="option-item" hover-class="none" hover-stay-time="0">
+   <navigator class="option-item" hover-class="none" hover-stay-time="0" url='/pages/setting/setting'>
          <view>
             <image src="../../images/config.png" ></image>
          </view>

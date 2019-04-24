@@ -246,6 +246,9 @@ deleteAbate:function(){
         currentTab: e.target.dataset.current
       })
     }
+  },
+  catchTouchMove: function (res) {
+    return false
   }
 
 })

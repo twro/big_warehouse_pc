@@ -56,7 +56,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="bottom-tip">
+                        <div class="bottom-tip" v-if="recordList.length > 0">
                             <span class="loading-hook" ref="bottomTip">查看更多</span>
                         </div>
                     </div>
@@ -106,7 +106,8 @@
                     this.recordList = [];
                     //点击切换 加载数据
                     // this.reloadData();
-                    this.initScroll()
+                    this.initScroll();
+                    // this.scroll.refresh();
                 },
                 initScroll() {
                     // let scroll = new BScroll(this.$refs.listWrapper, {

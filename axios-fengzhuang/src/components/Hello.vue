@@ -5,34 +5,40 @@
 </template>
 
 <script>
-import http from '../utils/http'
-import api from '../utils/api'
+import http from "../utils/http";
+import api from "../utils/api";
 export default {
-  name: 'hello',
-  data () {
+  name: "hello",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "Welcome to Your Vue.js App"
+    };
   },
-  mounted: function () {
-    this.fetchData()
+  mounted: function() {
+    this.fetchData();
   },
   methods: {
-    fetchData: async function () {
+    fetchData: async function() {
       let params = {
-      }
-      const res = await http.get(api.right, params)
-      if (res.data.success) {
-        alert('请求成功')
-      }
+        SysNo: 1,
+        key: "",
+        currentPage: 1,
+        pageSize: 10
+      };
+      const res = await http.get(api.test, params);
+      console.log(res);
+      // if (res.data.success) {
+      //   alert('请求成功')
+      // }
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

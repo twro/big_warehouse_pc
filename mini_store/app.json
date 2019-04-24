@@ -45,7 +45,7 @@
        "selectedIconPath": "images/class_active.png"
       },
       {
-        "pagePath": "pages/idcardlist/idcardlist",
+        "pagePath": "pages/cart/cart",
         "text": "进货车",
         "iconPath": "images/shopcar.png",
         "selectedIconPath": "images/shopcar_active.png"

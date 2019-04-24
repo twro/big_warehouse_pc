@@ -66,7 +66,7 @@ export default {
   get (url, params) {
     return axios({
       method: 'get',
-      baseURL: 'https://cnodejs.org/api/v1',
+      baseURL: 'https://app.shunyingglobal.cn/B2CApp',
       url,
       params, // get 请求时带的参数
       timeout: 10000,

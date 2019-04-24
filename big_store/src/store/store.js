@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   mutations: {
     [action.LOGIN]: (state, data) => {
-      console.log(data)
+      // console.log(data)
       localStorage.token = data
       state.token = data
     },
@@ -20,7 +20,7 @@ export default new Vuex.Store({
       state.token = null
     },
     [action.TITLE]: (state, data) => {
-      console.log(data)
+      // console.log(data)
       state.title = data
     }
   }

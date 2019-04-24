@@ -1,0 +1,220 @@
+.sklogin-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+
+    .skloin-head {
+        width: 100%;
+        height: 3.8rem;
+        background: #4e026c;
+        position: relative;
+    }
+
+    .contact {
+        display: block;
+        position: absolute;
+        right: .3rem;
+        top: .1rem;
+        font-size: .26rem;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .sklogo {
+        width: 100%;
+        height: 2.74rem;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 1.8rem;
+        height: 1.8rem;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    .sktab-ul {
+        width: 100%;
+        padding: 0 .4rem;
+        display: flex;
+        color: #d7aae9;
+        font-size: .3rem;
+        line-height: .84rem;
+    }
+
+    .skipt-item {
+        flex: 1;
+        text-align: center;
+        position: relative;
+
+        &.active {
+            color: #fff;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-bottom: 10px solid #fff;
+                position: absolute;
+                bottom: -0.24rem;
+                left: 50%;
+                transform: translate(-50%, 0)
+            }
+        }
+    }
+
+    .inputBox {
+        padding-top: 1rem;
+        padding-left: .4rem;
+        padding-right: .4rem;
+    }
+
+    .sk-ipt {
+        width: 100%;
+        height: .9rem;
+        border: 1px solid #ececec;
+        border-radius: 5px;
+        margin-bottom: .5rem;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .icon-ipt {
+        width: .27rem;
+        height: .3rem;
+        background: url(../sklogin/sklogin/login_username.png) no-repeat top center;
+        background-size: 100%;
+        margin: 0 .3rem;
+    }
+
+    .pwd-icon {
+        background: url(../sklogin/sklogin/login_password.png) no-repeat top center;
+        background-size: 100%;
+    }
+
+    .account,
+    .pwd {
+        outline: none;
+        border: none;
+        height: 100%;
+        // padding-left: .8rem;
+        flex: 1;
+        font-size: .26rem;
+        vertical-align: middle;
+
+        &::-webkit-input-placeholder {
+            color: #ddd;
+        }
+    }
+
+    // .pwd{
+    //     padding-right: 1.68rem;
+    // }
+    .forget-pwd {
+        // width: 1.68rem;
+        text-align: center;
+        font-size: .26rem;
+        color: #f18701;
+        padding: 0 .3rem;
+    }
+    .getCode{
+        display: flex;
+        height: 100%;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .agree {
+        margin-top: .3rem;
+        display: flex;
+        justify-content: left;
+    }
+
+    .login-now {
+        display: inline-block;
+        width: 100%;
+        height: .92rem;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        font-size: .3rem;
+        color: #fff;
+        background: #4e026c;
+        border-radius: 5px;
+    }
+
+    .radioBtn {
+        position: relative;
+        display: inline-block;
+        margin-right: .15rem;
+    }
+
+    input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+    }
+
+    label.radio_label {
+        position: absolute;
+        left: 2px;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid #999;
+    }
+
+    input:checked+label {
+        background-color: #fff;
+        border: 1px solid #f18701;
+    }
+
+    input:checked+label::after {
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 9px;
+        top: 3px;
+        left: 6px;
+        border: 2px solid #f18701;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg)
+    }
+
+    .agree-text {
+        display: inline-block;
+        font-size: .24rem;
+        color: #9b9b9b;
+        vertical-align: top;
+    }
+
+    .agree-rule {
+        color: #2b2b2b;
+    }
+}
+.colorGray{
+    color: #b5b4b4;
+    font-size: .32rem;
+}
+.colorRepul{
+    font-size: .32rem;
+    color: #4e026c;
+    span{
+        color: #0c0202;
+    }
+}

@@ -13,7 +13,7 @@
 
 <swiper current="{{currentTab}}" duration="300" style='height:{{swiperHeight}}px' bindchange="swiperTab">
 
-  <swiper-item>
+  <swiper-item catchtouchmove='catchTouchMove'>
     <scroll-view scroll-y style='height:{{scrollViewheight}}px'>
       <view class="item-wrap">
         <view class="item-box">
@@ -109,13 +109,10 @@
     </view>
   </swiper-item>
 
-
-
-
-  <swiper-item>
+  <swiper-item catchtouchmove='catchTouchMove'>
     <view>保税区直供</view>
   </swiper-item>
-  <swiper-item>
+  <swiper-item catchtouchmove='catchTouchMove'>
     <view>海外直邮</view>
   </swiper-item>
 </swiper>
